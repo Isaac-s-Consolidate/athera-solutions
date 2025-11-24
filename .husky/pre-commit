@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "🔍 Running type-check..."
+npm run type-check
+
+echo "✨ Running lint-staged..."
+npx lint-staged
+
