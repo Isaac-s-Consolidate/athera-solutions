@@ -25,9 +25,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        {/* Placeholder Header */}
+        <header className="bg-gray-800 text-white p-4">
+          <div className="container mx-auto">
+            <h1 className="text-xl font-bold">Placeholder Header</h1>
+          </div>
+        </header>
+
+        {/* Main content */}
+        <main className="flex-1 container mx-auto p-4">{children}</main>
+
+        {/* Placeholder Footer */}
+        <footer className="bg-gray-900 text-white p-4 mt-auto">
+          <div className="container mx-auto text-center">
+            Placeholder Footer &copy; {new Date().getFullYear()}
+          </div>
+        </footer>
       </body>
     </html>
   );
