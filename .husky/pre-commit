@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "🎨 Running format check..."
+npm run format:check
+
 echo "🔍 Running type-check..."
 npm run type-check
 
