@@ -8,7 +8,7 @@ import call from './call.svg';
 import email from './email.svg';
 import workH from './workHour.svg';
 import send from './send.svg';
-import arrows from './arrows.svg';
+import brackets from './brackets.svg';
 import cloud from './cloud.svg';
 import group from './group.svg';
 import ht from './heartrate.svg';
@@ -27,7 +27,7 @@ export const images = {
   email,
   workH,
   send,
-  arrows,
+  brackets,
   cloud,
   group,
   ht,
