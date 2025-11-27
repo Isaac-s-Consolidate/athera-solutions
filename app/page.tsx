@@ -1,7 +1,14 @@
 import React from 'react';
+import ContactForm from '@/components/ContactForm';
 
-const page = () => {
-  return <div>Start Development</div>;
+const HomePage = () => {
+  return (
+    <div className="min-h-screen">
+      <main>
+        <ContactForm />
+      </main>
+    </div>
+  );
 };
 
-export default page;
+export default HomePage;
