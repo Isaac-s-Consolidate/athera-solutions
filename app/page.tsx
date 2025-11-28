@@ -2,6 +2,7 @@ import React from 'react';
 import ContactForm from '@/components/ContactForm';
 import WhoWeAre from '@/components/WhoWeAre';
 import OurServices from '@/components/OurServices';
+import Testimonials from '@/components/Testimonials';
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
         <WhoWeAre />
         <OurServices />
         <ContactForm />
+        <Testimonials />
       </main>
     </div>
   );
