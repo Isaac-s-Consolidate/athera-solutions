@@ -121,7 +121,7 @@ export default function Testimonials() {
             </div>
             {/* Testimonial text */}
             <p className="text-lg font-medium text-center text-white">
-              "{t.message}"
+              '{t.message}'
             </p>
           </div>
         ))}
