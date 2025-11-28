@@ -10,8 +10,8 @@ const HomePage = () => {
       <main>
         <WhoWeAre />
         <OurServices />
-        <ContactForm />
         <Testimonials />
+        <ContactForm />
       </main>
     </div>
   );
