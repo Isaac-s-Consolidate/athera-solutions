@@ -144,7 +144,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Inner content container */}
-                <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full">
+                <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full cursor-pointer">
                   {/* Linear gradient overlay on content */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
