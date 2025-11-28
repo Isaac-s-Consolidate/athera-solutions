@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     country: 'USA',
     stars: 5,
     message:
-      'Athera didn’t just build our system — they understood our goals and translated them into a product that exceeded expectations.',
+      'Athera didnt just build our system — they understood our goals and translated them into a product that exceeded expectations.',
     avatar: user1,
   },
   {
@@ -121,7 +121,7 @@ export default function Testimonials() {
             </div>
             {/* Testimonial text */}
             <p className="text-lg font-medium text-center text-white">
-              '{t.message}'
+              {t.message}
             </p>
           </div>
         ))}
