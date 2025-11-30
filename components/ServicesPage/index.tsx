@@ -4,7 +4,7 @@ import images from '@/public/images/images';
 import Image from 'next/image';
 import { useState } from 'react';
 import ContactForm from '@/components/ContactForm';
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import leftArrow from '@/app/assets/left.png';
 import rightArrow from '@/app/assets/right.png';
 
@@ -18,7 +18,12 @@ interface ServiceCardProps {
 /* -----------------------------------------
    SERVICE CARD
 ------------------------------------------ */
-const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) => (
+const ServiceCard = ({
+  icon,
+  title,
+  description,
+  features,
+}: ServiceCardProps) => (
   <div className="relative group rounded-2xl p-1.5 transition-all duration-500 cursor-pointer">
     {/* Hover border animation */}
     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
@@ -34,7 +39,7 @@ const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) =
       <div
         className="absolute inset-0 animate-border-flow"
         style={{
-          background: `conic-gradient(from 225deg at 50% 50%, #0BB453 0deg, #0BB453 45deg, #0BA44D 90deg, #0A9347 95deg, #08713B 100deg, #033020 150deg, #02281A 180deg, #022018 360deg)`
+          background: `conic-gradient(from 225deg at 50% 50%, #0BB453 0deg, #0BB453 45deg, #0BA44D 90deg, #0A9347 95deg, #08713B 100deg, #033020 150deg, #02281A 180deg, #022018 360deg)`,
         }}
       />
     </div>
@@ -54,7 +59,9 @@ const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) =
           <Image src={icon} alt={title} width={40} height={40} />
         </div>
 
-        <h2 className="font-bold text-lg sm:text-xl text-white text-center">{title}</h2>
+        <h2 className="font-bold text-lg sm:text-xl text-white text-center">
+          {title}
+        </h2>
         <p className="text-base sm:text-[17px] text-[#E6E7E8] text-center">
           {description}
         </p>
@@ -62,7 +69,10 @@ const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) =
         {/* Features */}
         <ul className="flex flex-col gap-2 mt-2">
           {features.map((f, i) => (
-            <li key={i} className="flex items-start gap-2 text-[#E6E7E8] text-sm">
+            <li
+              key={i}
+              className="flex items-start gap-2 text-[#E6E7E8] text-sm"
+            >
               <span className="w-2 h-2 rounded-full bg-[#0BB453] mt-1"></span>
               {f}
             </li>
@@ -80,16 +90,14 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div
-      className="relative group rounded-xl p-0.5 transition-all duration-500 mb-4"
-    >
+    <div className="relative group rounded-xl p-0.5 transition-all duration-500 mb-4">
       {/* Animated border like cards */}
       <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
         <div className="absolute inset-0 bg-[#0BB453]" />
         <div
           className="absolute inset-0 animate-border-flow"
           style={{
-            background: `conic-gradient(from 210deg, #0BB453, #033020, #02281A, #0BB453)`
+            background: `conic-gradient(from 210deg, #0BB453, #033020, #02281A, #0BB453)`,
           }}
         />
       </div>
@@ -103,16 +111,20 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
           {q}
 
           {open ? (
-            <ChevronUp size={22} className="transition-transform duration-300" />
+            <ChevronUp
+              size={22}
+              className="transition-transform duration-300"
+            />
           ) : (
-            <ChevronDown size={22} className="transition-transform duration-300" />
+            <ChevronDown
+              size={22}
+              className="transition-transform duration-300"
+            />
           )}
         </button>
 
         {open && (
-          <p className="mt-3 text-[#E6E7E8] text-base leading-relaxed">
-            {a}
-          </p>
+          <p className="mt-3 text-[#E6E7E8] text-base leading-relaxed">{a}</p>
         )}
       </div>
     </div>
@@ -129,10 +141,10 @@ const ServicesPage = () => {
       title: 'Custom Software',
       description: 'Tailored solutions built to scale.',
       features: [
-        "End-to-end engineering",
-        "Performance optimized",
-        "Enterprise-grade security",
-        "API-ready architectures"
+        'End-to-end engineering',
+        'Performance optimized',
+        'Enterprise-grade security',
+        'API-ready architectures',
       ],
     },
     {
@@ -140,10 +152,10 @@ const ServicesPage = () => {
       title: 'Cloud Systems',
       description: 'Reliable, fault-tolerant cloud deployments.',
       features: [
-        "AWS / GCP / Azure",
-        "Horizontal scaling",
-        "Load-balanced systems",
-        "24/7 uptime focus"
+        'AWS / GCP / Azure',
+        'Horizontal scaling',
+        'Load-balanced systems',
+        '24/7 uptime focus',
       ],
     },
     {
@@ -151,10 +163,10 @@ const ServicesPage = () => {
       title: 'UI/UX Design',
       description: 'Human-centered interfaces that convert.',
       features: [
-        "User flows",
-        "High-fidelity mockups",
-        "Design systems",
-        "Interactive prototypes"
+        'User flows',
+        'High-fidelity mockups',
+        'Design systems',
+        'Interactive prototypes',
       ],
     },
     {
@@ -162,10 +174,10 @@ const ServicesPage = () => {
       title: 'Product Strategy',
       description: 'From concept to market-ready execution.',
       features: [
-        "Roadmapping",
-        "Market alignment",
-        "Go-to-market planning",
-        "Launch readiness"
+        'Roadmapping',
+        'Market alignment',
+        'Go-to-market planning',
+        'Launch readiness',
       ],
     },
     {
@@ -173,32 +185,50 @@ const ServicesPage = () => {
       title: 'Automation & AI',
       description: 'Smarter workflows, better decisions.',
       features: [
-        "AI chatbots",
-        "Process automation",
-        "ML-powered insights",
-        "Task orchestration"
+        'AI chatbots',
+        'Process automation',
+        'ML-powered insights',
+        'Task orchestration',
       ],
     },
   ];
 
   const faqs = [
-    { q: 'How long does a typical project take?', a: 'Most products take 4–12 weeks depending on complexity.' },
-    { q: 'Do you work with startups?', a: 'Yes, we help early-stage teams move fast.' },
-    { q: 'Can you maintain my existing system?', a: 'We handle refactors, upgrades, and ongoing support.' },
-    { q: 'What tech stacks do you use?', a: 'React, Next.js, Node, Go, Docker, AWS, microservices.' },
-    { q: 'Do you offer design-only projects?', a: 'Yes, you can hire us for UI/UX alone.' },
-    { q: 'Do you provide support after launch?', a: 'We offer long-term maintenance plans.' },
-    { q: 'What makes Athera different?', a: 'Scalability, precision, and human-centered product thinking.' },
+    {
+      q: 'How long does a typical project take?',
+      a: 'Most products take 4–12 weeks depending on complexity.',
+    },
+    {
+      q: 'Do you work with startups?',
+      a: 'Yes, we help early-stage teams move fast.',
+    },
+    {
+      q: 'Can you maintain my existing system?',
+      a: 'We handle refactors, upgrades, and ongoing support.',
+    },
+    {
+      q: 'What tech stacks do you use?',
+      a: 'React, Next.js, Node, Go, Docker, AWS, microservices.',
+    },
+    {
+      q: 'Do you offer design-only projects?',
+      a: 'Yes, you can hire us for UI/UX alone.',
+    },
+    {
+      q: 'Do you provide support after launch?',
+      a: 'We offer long-term maintenance plans.',
+    },
+    {
+      q: 'What makes Athera different?',
+      a: 'Scalability, precision, and human-centered product thinking.',
+    },
   ];
 
   return (
     <div className="w-full bg-[#010A04] text-white py-20 px-6 flex flex-col items-center gap-14">
-      
       {/* HEADER */}
       <div className="mt-10 mb-6 px-6 py-3 border border-[#E6E7E8]/40 rounded-2xl bg-[#010A04]/40 backdrop-blur-md shadow-lg">
-        <h1 className="text-3xl font-semibold text-[#E6E7E8]">
-          Our Services
-        </h1>
+        <h1 className="text-3xl font-semibold text-[#E6E7E8]">Our Services</h1>
       </div>
 
       <div className="max-w-[900px] text-center flex flex-col gap-4">
@@ -246,7 +276,9 @@ const ServicesPage = () => {
         </div>
 
         <div className="mt-6">
-          {faqs.map((f, i) => <FAQItem key={i} {...f} />)}
+          {faqs.map((f, i) => (
+            <FAQItem key={i} {...f} />
+          ))}
         </div>
       </div>
 
@@ -254,30 +286,30 @@ const ServicesPage = () => {
       <p className="max-w-[700px] text-center text-sm text-[#E6E7E8] mt-10">
         Ready to turn your idea into a powerful digital product?
       </p>
-          
+
       <button className="px-8 py-3 bg-transparent text-white rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
         Start Your Project Today
       </button>
       <div
-          className="mt-20 max-w-6xl mx-auto rounded-3xl p-10 text-center"
-          style={{
-            background:
-              'linear-gradient(94.87deg, #242243 24.19%, #0BB453 98.65%)',
-          }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Delivering <span className="text-[#0BB453]">Measurable Impact</span>
-          </h2>
+        className="mt-20 max-w-6xl mx-auto rounded-3xl p-10 text-center"
+        style={{
+          background:
+            'linear-gradient(94.87deg, #242243 24.19%, #0BB453 98.65%)',
+        }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Delivering <span className="text-[#0BB453]">Measurable Impact</span>
+        </h2>
 
-          <p className="text-white text-lg max-w-2xl mx-auto mb-6 font-poppins">
-            Ready to transform your ideas into scalable reality? We deliver
-            end-to-end digital transformation with technical precision.
-          </p>
-          <button className="px-8 py-3 bg-transparent text-white font-poppins rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
-            Start Your Project Today
-          </button>
-        </div>  
-      <ContactForm />  
+        <p className="text-white text-lg max-w-2xl mx-auto mb-6 font-poppins">
+          Ready to transform your ideas into scalable reality? We deliver
+          end-to-end digital transformation with technical precision.
+        </p>
+        <button className="px-8 py-3 bg-transparent text-white font-poppins rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
+          Start Your Project Today
+        </button>
+      </div>
+      <ContactForm />
     </div>
   );
 };
