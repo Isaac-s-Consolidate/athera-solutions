@@ -207,7 +207,7 @@ const ServicesPage = () => {
         </h2>
         <p className="text-lg text-[#E6E7E8] leading-relaxed mt-9">
           At Athera, we design and build digital solutions that work beautifully
-          and perform flawlessly. Whether you're a startup or a large business,
+          and perform flawlessly. Whether you are a startup or a large business,
           we turn vision into tangible results.
         </p>
       </div>
