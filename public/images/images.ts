@@ -15,6 +15,7 @@ import ht from './heartrate.svg';
 import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
+import chero from './chero-bg.png';
 
 export const images = {
   logo,
@@ -34,6 +35,7 @@ export const images = {
   mentoring,
   os,
   wwa,
+  chero,
 };
 
 export default images;
