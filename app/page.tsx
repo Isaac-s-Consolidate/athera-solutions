@@ -1,4 +1,4 @@
-import React from 'react';
+import Build from '@/components/Build';
 import ContactForm from '@/components/ContactForm';
 import WhoWeAre from '@/components/WhoWeAre';
 import OurServices from '@/components/OurServices';
@@ -10,6 +10,7 @@ const HomePage = () => {
       <main>
         <WhoWeAre />
         <OurServices />
+        <Build />
         <Testimonials />
         <ContactForm />
       </main>
