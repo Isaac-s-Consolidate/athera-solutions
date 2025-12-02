@@ -3,6 +3,7 @@ import images from '@/public/images/images';
 import leftArrow from '@/app/assets/left.png';
 import rightArrow from '@/app/assets/right.png';
 import React from 'react';
+import { desc } from 'framer-motion/client';
 
 // Reusable Components - can be extracted to separate files later---
 
@@ -17,12 +18,13 @@ interface CardSectionProps {
   cards: Card[];
 }
 
-interface SectionHeaderProps {
+interface NoCardSectionProps {
   header: string;
+  description: string;
 }
 
-const SectionHeader = ({ header }: SectionHeaderProps) => (
-  <div className="mb-10 flex items-center">
+const SectionHeader = ({ header }: { header: string }) => (
+  <div className="mb-10 flex items-center justify-center">
     <Image
       src={leftArrow}
       width={42}
@@ -85,9 +87,26 @@ const CardSection = ({ header, cards }: CardSectionProps) => {
   );
 };
 
+const NoCardSection = ({ header, description }: NoCardSectionProps) => {
+  return (
+    <section className="mb-40 gap-10">
+      <SectionHeader header={header} />
+      <div className="flex flex-col gap-8">
+        <hr className="h-0.5  border-0 bg-linear-to-r from-[rgba(1,10,4,0.3)] via-[rgba(160,251,205,0.3)] to-[rgba(1,10,4,0.3)]" />
+        <div className="text-[16px] tracking-[-0.8px] leading-[160%] text-center">
+          {description}
+        </div>
+        <hr className="h-0.5 border-0 bg-linear-to-r from-[rgba(1,10,4,0.3)] via-[rgba(160,251,205,0.3)] to-[rgba(1,10,4,0.3)]" />
+      </div>
+    </section>
+  );
+};
+
 // Reusable Components - can be extracted to separate files later---
 
 // Careers page components---
+
+// HERO SECTION
 const CareersHero = () => {
   return (
     // Hero section
@@ -119,6 +138,7 @@ const CareersHero = () => {
   );
 };
 
+// WHY WORK WITH US SECTION
 const WhyWorkWithUs = () => {
   const cardsData: Card[] = [
     {
@@ -139,12 +159,37 @@ const WhyWorkWithUs = () => {
     // Add more cards here
   ];
   return (
-    <>
+    <section className="mb-50">
       <CardSection header="Why Work With Us" cards={cardsData} />
+    </section>
+  );
+};
+
+// CAREER OPPORTUNITIES SECTION
+const CareerOpportunities = () => {
+  return (
+    <>
+      <NoCardSection
+        header="Career Opportunities"
+        description="No available positions"
+      />
     </>
   );
 };
 
+// HOW TO APPLY SECTION
+const HowToApply = () => {
+  return (
+    <>
+      <NoCardSection
+        header="How to Apply"
+        description="Send your CV to careers@atherasolutions.com"
+      />
+    </>
+  );
+};
+
+// GROWTH AND PERKS SECTION
 const GrowthAndPerks = () => {
   const cardsData: Card[] = [
     {
@@ -170,9 +215,18 @@ const GrowthAndPerks = () => {
   ];
 
   return (
-    <>
+    <section className="mb-50">
       <CardSection header="Growth & Perks" cards={cardsData} />
-    </>
+      <div className="flex flex-col justify-center items-center gap-8 text-[#E6E7E8] px-5">
+        <div className="text-center text-[24px]">
+          We’re always looking for curious, creative, and driven minds. Ready to
+          build the future with us?
+        </div>
+        <button className="w-[377px] shrink-0 p-5  border border-[#E6E7E8] rounded-[30px] font-semibold text-[`22px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
+          Join our Team
+        </button>
+      </div>
+    </section>
   );
 };
 const CareersPage = () => {
@@ -180,6 +234,8 @@ const CareersPage = () => {
     <>
       <CareersHero />
       <WhyWorkWithUs />
+      <CareerOpportunities />
+      <HowToApply />
       <GrowthAndPerks />
     </>
   );
