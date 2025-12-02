@@ -7,6 +7,7 @@ import ContactForm from '@/components/ContactForm';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import leftArrow from '@/app/assets/left.png';
 import rightArrow from '@/app/assets/right.png';
+import Delivering from '@/components/Delivering';
 
 interface ServiceCardProps {
   icon: string;
@@ -90,10 +91,10 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative group rounded-xl p-0.5 transition-all duration-500 mb-4">
-      {/* Animated border like cards */}
-      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-        <div className="absolute inset-0 bg-[#0BB453]" />
+    <div className="relative group rounded-xl p-[2px] mb-4 border border-[#0BB453]">
+      {/* Hover animated glow */}
+      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[#0BB453]/30" />
         <div
           className="absolute inset-0 animate-border-flow"
           style={{
@@ -102,7 +103,7 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
         />
       </div>
 
-      {/* FAQ Inner container */}
+      {/* Inner box */}
       <div className="relative bg-inherit rounded-xl py-4 px-5">
         <button
           onClick={() => setOpen(!open)}
@@ -111,15 +112,9 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
           {q}
 
           {open ? (
-            <ChevronUp
-              size={22}
-              className="transition-transform duration-300"
-            />
+            <ChevronUp size={22} className="transition-transform duration-300" />
           ) : (
-            <ChevronDown
-              size={22}
-              className="transition-transform duration-300"
-            />
+            <ChevronDown size={22} className="transition-transform duration-300" />
           )}
         </button>
 
@@ -130,6 +125,7 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
     </div>
   );
 };
+
 
 /* -----------------------------------------
    MAIN PAGE
@@ -290,25 +286,7 @@ const ServicesPage = () => {
       <button className="px-8 py-3 bg-transparent text-white rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
         Start Your Project Today
       </button>
-      <div
-        className="mt-20 max-w-6xl mx-auto rounded-3xl p-10 text-center"
-        style={{
-          background:
-            'linear-gradient(94.87deg, #242243 24.19%, #0BB453 98.65%)',
-        }}
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Delivering <span className="text-[#0BB453]">Measurable Impact</span>
-        </h2>
-
-        <p className="text-white text-lg max-w-2xl mx-auto mb-6 font-poppins">
-          Ready to transform your ideas into scalable reality? We deliver
-          end-to-end digital transformation with technical precision.
-        </p>
-        <button className="px-8 py-3 bg-transparent text-white font-poppins rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
-          Start Your Project Today
-        </button>
-      </div>
+      <Delivering />
       <ContactForm />
     </div>
   );
