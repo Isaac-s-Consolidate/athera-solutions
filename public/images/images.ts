@@ -16,6 +16,13 @@ import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
 import chero from './chero-bg.png';
+import wwwu from './whyworkwithus.svg';
+import graph from './graph.svg';
+import globe from './globe.svg';
+import cash from './cash.svg';
+import rbrackets from './revbrackets.svg';
+import check from './check.svg';
+import gandp from './growthandperks.svg';
 
 export const images = {
   logo,
@@ -36,6 +43,13 @@ export const images = {
   os,
   wwa,
   chero,
+  wwwu,
+  gandp,
+  graph,
+  globe,
+  cash,
+  rbrackets,
+  check,
 };
 
 export default images;
