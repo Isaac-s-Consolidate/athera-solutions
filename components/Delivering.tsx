@@ -1,12 +1,11 @@
-"use client";
+'use client';
 
 const ImpactSection = () => {
   return (
     <section
       className="mt-20 max-w-6xl mx-auto rounded-3xl p-10 text-center"
       style={{
-        background:
-          "linear-gradient(94.87deg, #242243 24.19%, #0BB453 98.65%)",
+        background: 'linear-gradient(94.87deg, #242243 24.19%, #0BB453 98.65%)',
       }}
     >
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

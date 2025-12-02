@@ -112,9 +112,15 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
           {q}
 
           {open ? (
-            <ChevronUp size={22} className="transition-transform duration-300" />
+            <ChevronUp
+              size={22}
+              className="transition-transform duration-300"
+            />
           ) : (
-            <ChevronDown size={22} className="transition-transform duration-300" />
+            <ChevronDown
+              size={22}
+              className="transition-transform duration-300"
+            />
           )}
         </button>
 
@@ -125,7 +131,6 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
     </div>
   );
 };
-
 
 /* -----------------------------------------
    MAIN PAGE
