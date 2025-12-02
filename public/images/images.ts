@@ -15,6 +15,16 @@ import ht from './heartrate.svg';
 import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
+import clarity from './clarity.svg';
+import effic from './effic.svg';
+import creativity from './creativity.svg';
+import inclusive from './inclusive.svg';
+import toplift from './totleft.svg';
+import topright from './topright.svg';
+
+
+
+
 
 export const images = {
   logo,
@@ -34,6 +44,13 @@ export const images = {
   mentoring,
   os,
   wwa,
+  clarity,
+  effic,
+  creativity,
+  inclusive,
+  toplift,
+  topright,
+
 };
 
 export default images;
