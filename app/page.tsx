@@ -16,7 +16,7 @@ const HomePage = () => {
         <Build />
         <Testimonials />
         <ContactForm />
-        <CoreValues />
+
       </main>
     </div>
   );
