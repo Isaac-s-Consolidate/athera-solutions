@@ -41,24 +41,24 @@ export default function CoreValues() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Title with inline decorative images */}
         <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-          <img
-            src={images.toplift.src}
+          <Image
+            src={images.toplift}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
           <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
             Our Core Values
           </span>
-          <img
-            src={images.topright.src}
+          <Image
+            src={images.topright}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
         </h2>
 

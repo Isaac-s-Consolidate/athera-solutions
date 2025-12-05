@@ -73,24 +73,24 @@ const TeamSection = () => {
         {/* Section Title */}
         <div className="w-full max-w-4xl mx-auto mb-16">
           <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-            <img
-              src={images.toplift.src}
+            <Image
+              src={images.toplift}
               alt=""
               aria-hidden="true"
               className="w-10 h-10 opacity-80"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
             <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
               Team
             </span>
-            <img
-              src={images.topright.src}
+            <Image
+              src={images.topright}
               alt=""
               aria-hidden="true"
               className="w-10 h-10 opacity-80"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
           </h2>
         </div>
@@ -241,24 +241,24 @@ const AboutUsPage = () => {
         {/* Header */}
         <div className="w-full max-w-4xl mx-auto mb-16">
           <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-            <img
-              src={images.toplift.src}
+            <Image
+              src={images.toplift}
               alt=""
               aria-hidden="true"
               className="w-10 h-10 opacity-80"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
             <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
               Our Mission & Vision
             </span>
-            <img
-              src={images.topright.src}
+            <Image
+              src={images.topright}
               alt=""
               aria-hidden="true"
               className="w-10 h-10 opacity-80"
-              width={24}
-              height={24}
+              width={40}
+              height={40}
             />
           </h2>
         </div>
@@ -301,7 +301,7 @@ const AboutUsPage = () => {
                 Our Promise
               </h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                At Athera Solutions, we don't just write code — we engineer
+                At Athera Solutions, we don&apos;t just write code — we engineer
                 possibilities.
               </p>
 

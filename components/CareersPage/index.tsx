@@ -1,5 +1,4 @@
 import images from '@/public/images/images';
-import Image from 'next/image';
 import ASButton from '../ASButton';
 import CardSection, { Card } from '../CardSection';
 import ContactForm from '../ContactForm';
