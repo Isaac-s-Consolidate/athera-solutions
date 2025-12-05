@@ -37,7 +37,7 @@ export default function CoreValues() {
     <section className="w-full py-20 bg-black text-white relative overflow-visible">
       {/* Decorative mid-left icon (efficiency) kept absolute; top decorations will sit inline with the heading */}
       <img
-        src={images.effic.src ?? images.effic}
+        src={images.effic}
         alt=""
         aria-hidden="true"
         className="hidden lg:block absolute -left-8 top-1/2 w-20 h-20 opacity-30 -translate-y-1/2"
@@ -49,7 +49,7 @@ export default function CoreValues() {
         {/* Title with inline decorative images */}
         <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
           <img
-            src={images.toplift.src ?? images.toplift}
+            src={images.toplift}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
@@ -60,7 +60,7 @@ export default function CoreValues() {
             Our Core Values
           </span>
           <img
-            src={images.topright.src ?? images.topright}
+            src={images.topright}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
