@@ -1,5 +1,4 @@
 import images from '@/public/images/images';
-import Image from 'next/image';
 import ASButton from '../ASButton';
 import CardSection, { Card } from '../CardSection';
 import ContactForm from '../ContactForm';
@@ -11,14 +10,6 @@ const CareersHero = () => {
   return (
     // Hero section
     <section className="flex items-center justify-center w-full min-h-[650px] relative">
-      <Image
-        src={images.cloud} // Using cloud.svg as a replacement
-        alt="Careers Hero"
-        fill
-        // added top border for design accuracy
-        className="object-cover opacity-40 md:border-t-80 border-t-60 border-black-700"
-      />
-
       <div className="absolute flex flex-col items-center text-[#E6E7E8] gap-7">
         <button className="w-[178px] max-h-[53px] flex items-center justify-center p-4 font-bold text-[22px] border text-[#E6E7E8] border-[#E6E7E8] rounded-[50px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
           Careers

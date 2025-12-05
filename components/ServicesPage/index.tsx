@@ -25,28 +25,9 @@ const ServiceCard = ({
   description,
   features,
 }: ServiceCardProps) => (
-  <div className="relative group rounded-2xl p-1.5 transition-all duration-500 cursor-pointer">
-    {/* Hover border animation */}
-    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-      <div className="absolute inset-0 bg-[#E6E7E8]" />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(96% 96% at 50% 7.5%, rgba(0, 80, 0, 0.15) 0%, rgba(0, 80, 0, 0) 100%)',
-        }}
-      />
-      <div className="absolute inset-0 bg-[#0BB453]" />
-      <div
-        className="absolute inset-0 animate-border-flow"
-        style={{
-          background: `conic-gradient(from 225deg at 50% 50%, #0BB453 0deg, #0BB453 45deg, #0BA44D 90deg, #0A9347 95deg, #08713B 100deg, #033020 150deg, #02281A 180deg, #022018 360deg)`,
-        }}
-      />
-    </div>
-
+  <div className="relative group border-gradient w-full h-full">
     {/* Inner content */}
-    <div className="relative rounded-[14px] overflow-hidden bg-inherit h-full">
+    <div className="relative rounded-2xl overflow-hidden bg-[#0A0A0A] h-full">
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
         style={{

@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import images from '../public/images/images';
 
@@ -17,33 +18,14 @@ const NAV_LINKS = [
 export default function Navbar(): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
-
-  // State to track active path
-  const [activePath, setActivePath] = useState('/');
-
-  // Set active path on mount and route change
-  useLayoutEffect(() => {
-    const updatePath = () => setActivePath(window.location.pathname);
-
-    // Initial update
-    updatePath();
-
-    // Handle browser back/forward
-    window.addEventListener('popstate', updatePath);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('popstate', updatePath);
-    };
-  }, []);
+  const pathname = usePathname();
 
   // Helper function to get active link class
   const getActiveClass = (href: string) => {
-    const isActive =
-      activePath === href || (activePath === '/' && href === '/');
+    const isActive = pathname === href || (pathname === '/' && href === '/');
     return isActive
-      ? 'text-transparent bg-clip-text bg-gradient-to-b from-[#0CAB52] to-[#242243] font-semibold'
-      : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-b hover:from-[#0CAB52] hover:to-[#242243] transition-all duration-300';
+      ? 'text-transparent bg-clip-text bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] font-semibold'
+      : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] transition-all duration-300';
   };
 
   const navbarStyle = {

@@ -15,13 +15,17 @@ import ht from './heartrate.svg';
 import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
+import missionVision from './missionVision.svg';
+
+// Core values images
 import clarity from './clarity.svg';
 import effic from './effic.svg';
 import creativity from './creativity.svg';
 import inclusive from './inclusive.svg';
-import toplift from './totleft.svg';
+import toplift from './topleft.svg';
 import topright from './topright.svg';
-import missionVision from './missionVision.svg';
+
+// Team member images
 import isaac from './isaacOjo.svg';
 import olivia from './olivia.svg';
 import abel from './Abel.svg';
@@ -50,13 +54,15 @@ export const images = {
   mentoring,
   os,
   wwa,
+  missionVision,
+  // Core values
   clarity,
   effic,
   creativity,
   inclusive,
   toplift,
   topright,
-  missionVision,
+  // Team members
   isaac,
   olivia,
   abel,

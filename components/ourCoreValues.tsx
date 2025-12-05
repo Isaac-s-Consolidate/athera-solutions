@@ -36,36 +36,28 @@ export default function CoreValues() {
   return (
     <section className="w-full py-20 bg-black text-white relative overflow-visible">
       {/* Decorative mid-left icon (efficiency) kept absolute; top decorations will sit inline with the heading */}
-      <img
-        src={images.effic}
-        alt=""
-        aria-hidden="true"
-        className="hidden lg:block absolute -left-8 top-1/2 w-20 h-20 opacity-30 -translate-y-1/2"
-        width={80}
-        height={80}
-      />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Title with inline decorative images */}
         <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-          <img
+          <Image
             src={images.toplift}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
           <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
             Our Core Values
           </span>
-          <img
+          <Image
             src={images.topright}
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
         </h2>
 
@@ -74,21 +66,23 @@ export default function CoreValues() {
           {values.map((item) => (
             <div
               key={item.title}
-              className="bg-[#0e1412] p-8 rounded-3xl border border-white/5 hover:border-green-500/20 transition"
+              className="relative group border-gradient h-full"
             >
-              <div className="mb-4 flex justify-center">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={48}
-                  height={48}
-                />
-              </div>
+              <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
+                <div className="mb-4 flex justify-center">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={48}
+                    height={48}
+                  />
+                </div>
 
-              <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-white/70 leading-relaxed">
-                {item.description}
-              </p>
+                <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
