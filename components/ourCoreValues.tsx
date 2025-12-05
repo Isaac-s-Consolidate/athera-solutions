@@ -71,7 +71,7 @@ export default function CoreValues() {
               <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
                 <div className="mb-4 flex justify-center">
                   <Image
-                    src={item.icon.src}
+                    src={item.icon}
                     alt={item.title}
                     width={48}
                     height={48}
