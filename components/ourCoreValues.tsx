@@ -36,7 +36,6 @@ export default function CoreValues() {
   return (
     <section className="w-full py-20 bg-black text-white relative overflow-visible">
       {/* Decorative mid-left icon (efficiency) kept absolute; top decorations will sit inline with the heading */}
-  
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Title with inline decorative images */}
@@ -70,16 +69,16 @@ export default function CoreValues() {
               className="relative group border-gradient h-full"
             >
               <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
-              <div className="mb-4 flex justify-center">
-                <Image
-                  src={item.icon.src}
-                  alt={item.title}
-                  width={48}
-                  height={48}
-                />
-              </div>
+                <div className="mb-4 flex justify-center">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={48}
+                    height={48}
+                  />
+                </div>
 
-              <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
+                <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-white/70 leading-relaxed">
                   {item.description}
                 </p>

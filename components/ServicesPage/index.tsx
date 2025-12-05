@@ -24,52 +24,58 @@ const ServiceCard = ({
   title,
   description,
   features,
-}: ServiceCardProps) => (
-  <div className="relative group border-gradient w-full h-full">
+}: ServiceCardProps) => {
+  return (
+    <div className="relative group border-gradient w-full h-full">
+      {/* Inner content */}
+      <div className="relative rounded-2xl overflow-hidden bg-[#0A0A0A] h-full">
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          style={{
+            background:
+              'linear-gradient(282.33deg, rgba(255,255,255,0) 4%, rgba(255,255,255,0.04) 95%)',
+          }}
+        />
 
-    {/* Inner content */}
-    <div className="relative rounded-2xl overflow-hidden bg-[#0A0A0A] h-full">
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-        style={{
-          background:
-            'linear-gradient(282.33deg, rgba(255,255,255,0) 4%, rgba(255,255,255,0.04) 95%)',
-        }}
-      />
+        <div className="relative z-10 p-6 sm:p-8 flex flex-col gap-6">
+          <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#0BB453]/20 transition-all duration-700 flex justify-center">
+            <Image src={icon} alt={title} width={40} height={40} />
+          </div>
 
-      <div className="relative z-10 p-6 sm:p-8 flex flex-col gap-6">
-        <div className="p-3 bg-white/5 rounded-xl group-hover:bg-[#0BB453]/20 transition-all duration-700 flex justify-center">
-          <Image src={icon} alt={title} width={40} height={40} />
+          <h2 className="font-bold text-lg sm:text-xl text-white text-center">
+            {title}
+          </h2>
+          <p className="text-base sm:text-[17px] text-[#E6E7E8] text-center">
+            {description}
+          </p>
+
+          {/* Features */}
+          <ul className="flex flex-col gap-2 mt-2">
+            {features.map((f, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2 text-[#E6E7E8] text-sm"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#0BB453] mt-1"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <h2 className="font-bold text-lg sm:text-xl text-white text-center">
-          {title}
-        </h2>
-        <p className="text-base sm:text-[17px] text-[#E6E7E8] text-center">
-          {description}
-        </p>
-
-        {/* Features */}
-        <ul className="flex flex-col gap-2 mt-2">
-          {features.map((f, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-2 text-[#E6E7E8] text-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#0BB453] mt-1"></span>
-              {f}
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 /* -----------------------------------------
    FAQ ITEM
 ------------------------------------------ */
-const FAQItem = ({ q, a }: { q: string; a: string }) => {
+interface FAQItemProps {
+  q: string;
+  a: string;
+}
+
+const FAQItem = ({ q, a }: FAQItemProps) => {
   const [open, setOpen] = useState(false);
 
   return (
