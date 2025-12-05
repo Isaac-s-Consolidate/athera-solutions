@@ -26,7 +26,6 @@ const ServiceCard = ({
   features,
 }: ServiceCardProps) => (
   <div className="relative group border-gradient w-full h-full">
-
     {/* Inner content */}
     <div className="relative rounded-2xl overflow-hidden bg-[#0A0A0A] h-full">
       <div

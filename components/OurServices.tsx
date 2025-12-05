@@ -9,10 +9,8 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className="relative group border-gradient w-full h-full">
-
     {/* Inner content container */}
     <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full">
-
       {/* Content */}
       <div className="relative z-10 p-6 sm:p-8 flex flex-col items-center text-center gap-6 h-full">
         {/* Icon container */}

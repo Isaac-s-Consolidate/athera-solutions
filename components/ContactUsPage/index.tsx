@@ -11,8 +11,6 @@ const topright = '/images/topright.svg';
 const ContactUsPage = () => {
   return (
     <div className="text-white pt-24">
-    
-
       <ContactForm />
       {/* Need Immediate Help Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -41,22 +39,22 @@ const ContactUsPage = () => {
                 />
               </h1>
             </div>
-            
+
             <p className="text-[ #E6E7E8] mb-8 max-w-2xl mx-auto">
               For urgent inquiries, call us directly or schedule a consultation
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a 
-                href="tel:+1234567890" 
+              <a
+                href="tel:+1234567890"
                 className="inline-flex items-center gap-2 bg-[#0DAA52] hover:bg-[#099d47] text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
                 Call Now
               </a>
-              
-              <a 
-                href="#schedule" 
+
+              <a
+                href="#schedule"
                 className="inline-flex items-center gap-2 bg-transparent hover:bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg border border-gray-700 hover:border-[#0BB453] transition-all duration-300"
               >
                 Schedule Call
@@ -65,7 +63,6 @@ const ContactUsPage = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
