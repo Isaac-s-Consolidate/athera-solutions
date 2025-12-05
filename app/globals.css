@@ -3,6 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --radial-green: radial-gradient(
+    96% 96% at 50% 7.5%,
+    rgba(0, 80, 0, 0.15) 0%,
+    rgba(0, 80, 0, 0) 100%
+  );
+  --gradient-border: linear-gradient(
+    282.33deg,
+    rgba(255, 255, 255, 0) 4.18%,
+    rgba(255, 255, 255, 0.04) 95.82%
+  );
+  --gradient-border-hover: linear-gradient(
+    294.07deg,
+    rgba(36, 34, 67, 0.5) 33.41%,
+    rgba(11, 180, 83, 0.5) 94.61%
+  );
 }
 
 :root {
@@ -23,4 +38,79 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* utility classes */
+@layer utilities {
+  .bg-radial-green {
+    background-image: var(--radial-green);
+  }
+
+  /* Container */
+  .border-gradient {
+    position: relative;
+    border-radius: 20px;
+    background: #0a0a0a; /* Fallback background */
+    /* No padding here, we handle spacing in the child */
+  }
+
+  /* 1. Base Border State */
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px; /* Default border thickness */
+    background: var(--gradient-border);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 10; /* Ensure border sits on top of inner background */
+    transition: opacity 0.3s ease;
+  }
+
+  /* 2. Hover Border State (The Overlay) */
+  /* instead of changing properties on ::before, we add ::after for the hover state */
+  .border-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px; /* Match default thickness */
+    background: var(--gradient-border-hover);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0; /* Hidden by default */
+    transition:
+      opacity 0.3s ease-in-out,
+      padding 0.3s ease;
+  }
+
+  /* Hover Action */
+  .border-gradient:hover::after {
+    opacity: 1; /* Fade in the new gradient */
+    padding: 10px; /* Slight thickness increase if desired, or keep at 1px */
+  }
+
+  /* Text Gradient */
+  .text-gradient-green-purple {
+    background: linear-gradient(90deg, #0bb453 0%, #242243 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
