@@ -320,7 +320,7 @@ const AboutUsPage = () => {
             <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">Our Promise</h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                At Athera Solutions, we don't just write code — we engineer
+                At Athera Solutions, we don&apos;t just write code — we engineer
                 possibilities.
               </p>
               
