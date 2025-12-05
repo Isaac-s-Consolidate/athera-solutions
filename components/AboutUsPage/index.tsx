@@ -3,11 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import images from '@/public/images/images';
+import { images } from '@/public/images/images';
+import CoreValues from '../ourCoreValues';
 import ContactForm from '@/components/ContactForm';
 import Delivering from '@/components/Delivering';
-
-
 
 const teamMembers = [
   {
@@ -66,27 +65,35 @@ const teamMembers = [
   },
 ];
 
-
-
 // Separate Team Component
 const TeamSection = () => {
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#010A04] px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Section Title with arrows */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center justify-center gap-3">
-            <span className="text-green-500">→</span>
-            <span className="text-green-500">Team</span>
-            <span className="text-green-500">←</span>
+        {/* Section Title */}
+        <div className="w-full max-w-4xl mx-auto mb-16">
+          <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
+            <Image
+              src={images.toplift}
+              alt=""
+              aria-hidden="true"
+              className="w-10 h-10 opacity-80"
+              width={40}
+              height={40}
+            />
+            <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
+              Team
+            </span>
+            <Image
+              src={images.topright}
+              alt=""
+              aria-hidden="true"
+              className="w-10 h-10 opacity-80"
+              width={40}
+              height={40}
+            />
           </h2>
-        </motion.div>
+        </div>
 
         {/* CEO - Larger Card */}
         <motion.div
@@ -99,16 +106,19 @@ const TeamSection = () => {
             {/* Image container with gradient border */}
             <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-4 group">
               {/* Gradient border - always visible on hover */}
-              <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
-                   style={{
-                     background: 'linear-gradient(135deg, #0daa52 0%, #242243 100%)',
-                     padding: '2px',
-                     WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                     WebkitMaskComposite: 'xor',
-                     maskComposite: 'exclude'
-                   }}>
-              </div>
-              
+              <div
+                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(135deg, #0daa52 0%, #242243 100%)',
+                  padding: '2px',
+                  WebkitMask:
+                    'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude',
+                }}
+              ></div>
+
               {/* Image with zoom effect */}
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image
@@ -119,21 +129,21 @@ const TeamSection = () => {
                 />
               </div>
             </div>
-            
+
             <h3 className="text-xl md:text-2xl font-semibold text-white mb-1">
               {teamMembers[0].name}
             </h3>
             <p className="text-gray-400 mb-2">{teamMembers[0].title}</p>
-            <a 
-              href={teamMembers[0].linkedin} 
-              target="_blank" 
+            <a
+              href={teamMembers[0].linkedin}
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
             >
-              <Image 
-                src={images.linkedin} 
-                alt="LinkedIn" 
-                width={16} 
+              <Image
+                src={images.linkedin}
+                alt="LinkedIn"
+                width={16}
                 height={16}
                 className="w-4 h-4"
               />
@@ -155,16 +165,19 @@ const TeamSection = () => {
               {/* Image container with gradient border */}
               <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-3 group">
                 {/* Gradient border - always visible on hover */}
-                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
-                     style={{
-                       background: 'linear-gradient(135deg, #0daa52 0%, #242243 100%)',
-                       padding: '2px',
-                       WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                       WebkitMaskComposite: 'xor',
-                       maskComposite: 'exclude'
-                     }}>
-                </div>
-                
+                <div
+                  className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, #0daa52 0%, #242243 100%)',
+                    padding: '2px',
+                    WebkitMask:
+                      'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    maskComposite: 'exclude',
+                  }}
+                ></div>
+
                 {/* Image with zoom effect */}
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
@@ -175,21 +188,21 @@ const TeamSection = () => {
                   />
                 </div>
               </div>
-              
+
               <h3 className="text-base md:text-lg font-semibold text-white mb-1">
                 {member.name}
               </h3>
               <p className="text-sm text-gray-400 mb-2">{member.title}</p>
-              <a 
-                href={member.linkedin} 
-                target="_blank" 
+              <a
+                href={member.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
               >
-                <Image 
-                  src={images.linkedin} 
-                  alt="LinkedIn" 
-                  width={14} 
+                <Image
+                  src={images.linkedin}
+                  alt="LinkedIn"
+                  width={14}
                   height={14}
                   className="w-3.5 h-3.5"
                 />
@@ -223,45 +236,41 @@ const AboutUsPage = () => {
         </p>
       </section>
 
-     
-
       {/* ---------------- SECTION 2 — OUR MISSION & VISION ---------------- */}
       <section className="w-full px-6 md:px-12 lg:px-20 mb-24">
-        {/* Header Image */}
-        <div className="w-full max-w-[337px] mx-auto mb-16">
-          <Image
-            src={images.missionVision}
-            alt="Our Mission & Vision"
-            width={337}
-            height={60}
-            className="w-full h-auto mx-auto"
-            priority
-          />
+        {/* Header */}
+        <div className="w-full max-w-4xl mx-auto mb-16">
+          <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
+            <Image
+              src={images.toplift}
+              alt=""
+              aria-hidden="true"
+              className="w-10 h-10 opacity-80"
+              width={40}
+              height={40}
+            />
+            <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
+              Our Mission & Vision
+            </span>
+            <Image
+              src={images.topright}
+              alt=""
+              aria-hidden="true"
+              className="w-10 h-10 opacity-80"
+              width={40}
+              height={40}
+            />
+          </h2>
         </div>
 
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Vision Card - LEFT SIDE */}
-          <div className="relative group rounded-2xl p-[2px] transition-all duration-500 md:max-w-3xl">
-            {/* Animated border layer */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-              <div className="absolute inset-0 bg-[#0A1A12]" />
-
-              <div
-                className="absolute inset-0 animate-border-flow"
-                style={{
-                  background: `conic-gradient(from 225deg at 50% 50%, 
-          #0BB453 0deg,
-          #0BB453 90deg,
-          #06502F 180deg,
-          #022018 360deg
-        )`,
-                }}
-              />
-            </div>
-
+          <div className="relative group border-gradient w-full md:max-w-3xl">
             {/* Real card content */}
             <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">Our Vision</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
+                Our Vision
+              </h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
                 To be a trusted leader in digital transformation – helping
                 businesses harness the power of technology to achieve lasting
@@ -271,25 +280,11 @@ const AboutUsPage = () => {
           </div>
 
           {/* Mission Card - RIGHT SIDE */}
-          <div className="relative group rounded-2xl p-[2px] transition-all duration-500 md:max-w-3xl md:ml-auto">
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-              <div className="absolute inset-0 bg-[#0A1A12]" />
-
-              <div
-                className="absolute inset-0 animate-border-flow"
-                style={{
-                  background: `conic-gradient(from 225deg at 50% 50%, 
-          #0BB453 0deg,
-          #0BB453 90deg,
-          #06502F 180deg,
-          #022018 360deg
-        )`,
-                }}
-              />
-            </div>
-
+          <div className="relative group border-gradient w-full md:max-w-3xl md:ml-auto">
             <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">Our Mission</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
+                Our Mission
+              </h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
                 To make digital transformation accessible, efficient, and
                 sustainable for individuals and organizations across Africa and
@@ -300,44 +295,29 @@ const AboutUsPage = () => {
           </div>
 
           {/* Promise Card - LEFT SIDE WITH GREEN CORNER */}
-          <div className="relative group rounded-2xl p-[2px] transition-all duration-500 md:max-w-3xl">
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-              <div className="absolute inset-0 bg-[#0A1A12]" />
-
-              <div
-                className="absolute inset-0 animate-border-flow"
-                style={{
-                 background: `conic-gradient(from 225deg at 50% 50%, 
-          #0BB453 0deg,
-          #0BB453 90deg,
-          #06502F 180deg,
-          #022018 360deg
-        )`,
-                }}
-              />
-            </div>
-
+          <div className="relative group border-gradient w-full md:max-w-3xl">
             <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">Our Promise</h3>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
+                Our Promise
+              </h3>
               <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                At Athera Solutions, we don't just write code — we engineer
+                At Athera Solutions, we don&apos;t just write code — we engineer
                 possibilities.
               </p>
-              
+
               {/* Green Corner Accent - Bottom Right */}
-              
             </div>
           </div>
         </div>
       </section>
 
+      <CoreValues />
 
-  {/* ---------------- SECTION 3 — TEAM ---------------- */}
-     <TeamSection />
+      {/* ---------------- SECTION 3 — TEAM ---------------- */}
+      <TeamSection />
       {/* CTA */}
       <Delivering />
       <ContactForm />
-
     </main>
   );
 };
