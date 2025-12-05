@@ -11,14 +11,6 @@ const CareersHero = () => {
   return (
     // Hero section
     <section className="flex items-center justify-center w-full min-h-[650px] relative">
-      <Image
-        src={images.chero}
-        alt="Careers Hero"
-        fill
-        // added top border for design accuracy
-        className="object-cover opacity-40 md:border-t-80 border-t-60 border-black-700"
-      />
-
       <div className="absolute flex flex-col items-center text-[#E6E7E8] gap-7">
         <button className="w-[178px] max-h-[53px] flex items-center justify-center p-4 font-bold text-[22px] border text-[#E6E7E8] border-[#E6E7E8] rounded-[50px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
           Careers
@@ -93,23 +85,23 @@ const HowToApply = () => {
 const GrowthAndPerks = () => {
   const cardsData: Card[] = [
     {
-      icon: images.rbrackets,
+      icon: images.brackets, // Using brackets.svg as a replacement
       title: 'Remote-friendly work options',
     },
     {
-      icon: images.globe,
+      icon: images.cloud, // Using cloud.svg as a replacement
       title: 'Learning and mentorship programs',
     },
     {
-      icon: images.check,
+      icon: images.send, // Using send.svg as a replacement
       title: 'Flexible shcedules',
     },
     {
-      icon: images.cash,
+      icon: images.ht, // Using heartrate.svg as a replacement
       title: 'Project bonuses',
     },
     {
-      icon: images.graph,
+      icon: images.group, // Using group.svg as a replacement
       title: 'Career advancement opportunities',
     },
   ];
