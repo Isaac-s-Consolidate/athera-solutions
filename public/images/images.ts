@@ -15,14 +15,20 @@ import ht from './heartrate.svg';
 import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
-import chero from './chero-bg.png';
-import wwwu from './whyworkwithus.svg';
-import graph from './graph.svg';
-import globe from './globe.svg';
-import cash from './cash.svg';
-import rbrackets from './revbrackets.svg';
-import check from './check.svg';
-import gandp from './growthandperks.svg';
+import missionVision from './missionVision.svg';
+
+// Team member images
+import isaac from './isaacOjo.svg';
+import olivia from './olivia.svg';
+import abel from './Abel.svg';
+import collins from './Collins.svg';
+import jessica from './Jassica.svg';
+import emma from './Emma.svg';
+import victoria from './Victoria.svg';
+import cole from './Cole.svg';
+import favor from './Favor.svg';
+
+
 
 export const images = {
   logo,
@@ -42,14 +48,19 @@ export const images = {
   mentoring,
   os,
   wwa,
-  chero,
-  wwwu,
-  gandp,
-  graph,
-  globe,
-  cash,
-  rbrackets,
-  check,
+  missionVision,
+  // Team members
+  isaac,
+  olivia,
+  abel,
+  collins,
+  jessica,
+  emma,
+  victoria,
+  cole,
+  favor,
+
+
 };
 
 export default images;
