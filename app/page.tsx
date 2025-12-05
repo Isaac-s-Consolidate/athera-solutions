@@ -16,7 +16,6 @@ const HomePage = () => {
         <Build />
         <Testimonials />
         <ContactForm />
-
       </main>
     </div>
   );

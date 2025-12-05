@@ -21,10 +21,16 @@ import creativity from './creativity.svg';
 import inclusive from './inclusive.svg';
 import toplift from './totleft.svg';
 import topright from './topright.svg';
-
-
-
-
+import missionVision from './missionVision.svg';
+import isaac from './isaacOjo.svg';
+import olivia from './olivia.svg';
+import abel from './Abel.svg';
+import collins from './Collins.svg';
+import jessica from './Jassica.svg';
+import emma from './Emma.svg';
+import victoria from './Victoria.svg';
+import cole from './Cole.svg';
+import favor from './Favor.svg';
 
 export const images = {
   logo,
@@ -50,7 +56,16 @@ export const images = {
   inclusive,
   toplift,
   topright,
-
+  missionVision,
+  isaac,
+  olivia,
+  abel,
+  collins,
+  jessica,
+  emma,
+  victoria,
+  cole,
+  favor,
 };
 
 export default images;

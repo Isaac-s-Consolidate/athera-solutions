@@ -1,39 +1,36 @@
 // app/components/CoreValues.tsx
 
-import Image from "next/image";
-import { images } from "@/public/images/images";
+import Image from 'next/image';
+import { images } from '@/public/images/images';
 
 export default function CoreValues() {
   const values = [
     {
-      title: "Efficiency",
+      title: 'Efficiency',
       description:
-        "We work smart, delivering high-quality solutions quickly and effectively.",
+        'We work smart, delivering high-quality solutions quickly and effectively.',
       icon: images.effic,
     },
 
     {
-      title: "Clarity",
-      description:
-        "We make technology simple, clear, and easy to understand.",
+      title: 'Clarity',
+      description: 'We make technology simple, clear, and easy to understand.',
       icon: images.clarity,
     },
 
     {
-      title: "Creativity",
+      title: 'Creativity',
       description:
-        "We blend innovation and design to create impactful digital experiences.",
+        'We blend innovation and design to create impactful digital experiences.',
       icon: images.creativity,
     },
 
     {
-      title: "Inclusiveness",
+      title: 'Inclusiveness',
       description:
-        "We value every voice and build solutions shaped by diverse perspectives.",
+        'We value every voice and build solutions shaped by diverse perspectives.',
       icon: images.inclusive,
     },
-
-    
   ];
 
   return (
@@ -59,7 +56,9 @@ export default function CoreValues() {
             width={24}
             height={24}
           />
-          <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">Our Core Values</span>
+          <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
+            Our Core Values
+          </span>
           <img
             src={images.topright.src ?? images.topright}
             alt=""
@@ -87,7 +86,9 @@ export default function CoreValues() {
               </div>
 
               <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-white/70 leading-relaxed">{item.description}</p>
+              <p className="text-white/70 leading-relaxed">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
