@@ -9,27 +9,27 @@ export default function CoreValues() {
       title: 'Efficiency',
       description:
         'We work smart, delivering high-quality solutions quickly and effectively.',
-      icon: images.effic.src,
+      Icon: images.effic,
     },
 
     {
       title: 'Clarity',
       description: 'We make technology simple, clear, and easy to understand.',
-      icon: images.clarity.src,
+      Icon: images.clarity,
     },
 
     {
       title: 'Creativity',
       description:
         'We blend innovation and design to create impactful digital experiences.',
-      icon: images.creativity.src,
+      Icon: images.creativity,
     },
 
     {
       title: 'Inclusiveness',
       description:
         'We value every voice and build solutions shaped by diverse perspectives.',
-      icon: images.inclusive.src,
+      Icon: images.inclusive,
     },
   ];
 
@@ -63,19 +63,14 @@ export default function CoreValues() {
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((item) => (
+          {values.map(({ Icon, ...item }) => (
             <div
               key={item.title}
               className="relative group border-gradient h-full"
             >
               <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
                 <div className="mb-4 flex justify-center">
-                  <Image
-                    src={item.icon.src}
-                    alt={item.title}
-                    width={48}
-                    height={48}
-                  />
+                  <Icon className="w-12 h-12" />
                 </div>
 
                 <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
