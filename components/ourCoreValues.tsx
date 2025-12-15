@@ -3,44 +3,43 @@
 import Image from 'next/image';
 import { images } from '@/public/images/images';
 
-// Create a wrapper component for the SVG icons
-const IconWrapper = ({
-  icon: Icon,
-  className = '',
-}: {
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  className?: string;
-}) => {
-  return <Icon className={className} />;
-};
+// Import the specific SVG components
+import { ReactComponent as EfficiencyIcon } from '@/public/images/effic.svg';
+import { ReactComponent as ClarityIcon } from '@/public/images/clarity.svg';
+import { ReactComponent as CreativityIcon } from '@/public/images/creativity.svg';
+import { ReactComponent as InclusivenessIcon } from '@/public/images/inclusive.svg';
+
+// Type for the value items
+interface CoreValueItem {
+  title: string;
+  description: string;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+}
 
 export default function CoreValues() {
-  const values = [
+  const values: CoreValueItem[] = [
     {
       title: 'Efficiency',
       description:
         'We work smart, delivering high-quality solutions quickly and effectively.',
-      Icon: images.effic,
+      Icon: EfficiencyIcon,
     },
-
     {
       title: 'Clarity',
       description: 'We make technology simple, clear, and easy to understand.',
-      Icon: images.clarity,
+      Icon: ClarityIcon,
     },
-
     {
       title: 'Creativity',
       description:
         'We blend innovation and design to create impactful digital experiences.',
-      Icon: images.creativity,
+      Icon: CreativityIcon,
     },
-
     {
       title: 'Inclusiveness',
       description:
         'We value every voice and build solutions shaped by diverse perspectives.',
-      Icon: images.inclusive,
+      Icon: InclusivenessIcon,
     },
   ];
 
@@ -74,14 +73,14 @@ export default function CoreValues() {
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map(({ Icon, ...item }) => (
+          {values.map(({ Icon: ValueIcon, ...item }) => (
             <div
               key={item.title}
               className="relative group border-gradient h-full"
             >
               <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
                 <div className="mb-4 flex justify-center">
-                  <IconWrapper icon={Icon} className="w-12 h-12" />
+                  <ValueIcon className="w-12 h-12" />
                 </div>
 
                 <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
