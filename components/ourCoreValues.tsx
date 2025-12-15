@@ -9,27 +9,27 @@ export default function CoreValues() {
       title: 'Efficiency',
       description:
         'We work smart, delivering high-quality solutions quickly and effectively.',
-      icon: images.effic,
+      icon: images.effic.src,
     },
 
     {
       title: 'Clarity',
       description: 'We make technology simple, clear, and easy to understand.',
-      icon: images.clarity,
+      icon: images.clarity.src,
     },
 
     {
       title: 'Creativity',
       description:
         'We blend innovation and design to create impactful digital experiences.',
-      icon: images.creativity,
+      icon: images.creativity.src,
     },
 
     {
       title: 'Inclusiveness',
       description:
         'We value every voice and build solutions shaped by diverse perspectives.',
-      icon: images.inclusive,
+      icon: images.inclusive.src,
     },
   ];
 
