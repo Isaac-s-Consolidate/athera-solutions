@@ -3,6 +3,17 @@
 import Image from 'next/image';
 import { images } from '@/public/images/images';
 
+// Create a wrapper component for the SVG icons
+const IconWrapper = ({
+  icon: Icon,
+  className = '',
+}: {
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  className?: string;
+}) => {
+  return <Icon className={className} />;
+};
+
 export default function CoreValues() {
   const values = [
     {
@@ -70,7 +81,7 @@ export default function CoreValues() {
             >
               <div className="bg-[#0e1412] p-8 rounded-2xl h-full">
                 <div className="mb-4 flex justify-center">
-                  <Icon className="w-12 h-12" />
+                  <IconWrapper icon={Icon} className="w-12 h-12" />
                 </div>
 
                 <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
