@@ -1,15 +1,11 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
 
 echo "🎨 Running format check..."
 npm run format:check
-echo "🎨 Running format check..."
-npm run format:check
 
-echo "🔍 Running type-check..."
-npm run type-check
 echo "🔍 Running type-check..."
 npm run type-check
 
 echo "✨ Running lint-staged..."
 npx lint-staged
+

@@ -77,9 +77,9 @@ const TeamSection = () => {
               src={images.toplift}
               alt=""
               aria-hidden="true"
-              className="w-10 h-10 opacity-80"
-              width={40}
-              height={40}
+              className="w-8 h-8 object-contain"
+              width={32}
+              height={32}
             />
             <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
               Team
@@ -88,9 +88,9 @@ const TeamSection = () => {
               src={images.topright}
               alt=""
               aria-hidden="true"
-              className="w-10 h-10 opacity-80"
-              width={40}
-              height={40}
+              className="w-8 h-8 object-contain"
+              width={32}
+              height={32}
             />
           </h2>
         </div>
@@ -245,20 +245,20 @@ const AboutUsPage = () => {
               src={images.toplift}
               alt=""
               aria-hidden="true"
-              className="w-10 h-10 opacity-80"
-              width={40}
-              height={40}
+              className="w-8 h-8 object-contain"
+              width={32}
+              height={32}
             />
             <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
-              Our Mission & Vision
+              Our Mission &amp; Vision
             </span>
             <Image
               src={images.topright}
               alt=""
               aria-hidden="true"
-              className="w-10 h-10 opacity-80"
-              width={40}
-              height={40}
+              className="w-8 h-8 object-contain"
+              width={32}
+              height={32}
             />
           </h2>
         </div>
