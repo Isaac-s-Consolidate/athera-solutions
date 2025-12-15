@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import WhoWeAre from '@/components/WhoWeAre';
 import OurServices from '@/components/OurServices';
 import Testimonials from '@/components/Testimonials';
-import CoreValues from '@/components/ourCoreValues';
 
 const HomePage = () => {
   return (
