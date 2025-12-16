@@ -13,7 +13,8 @@ const teamMembers = [
     name: 'Mr. Isaac Ojo',
     title: 'CEO',
     image: images.isaac,
-    linkedin: '#',
+    linkedin:
+      'https://www.linkedin.com/in/isaac-faith-ojo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
     name: 'Ms. Olivia',
@@ -55,7 +56,8 @@ const teamMembers = [
     name: 'Ms. Victoria',
     title: 'Virtual Assistant',
     image: images.victoria,
-    linkedin: '#',
+    linkedin:
+      'https://www.linkedin.com/in/victoria-okoro-31a73a321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
   },
   {
     name: 'Mr. Cole',
@@ -138,10 +140,10 @@ const TeamSection = () => {
               href={teamMembers[0].linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black-500/10 hover:bg-black-500/20 transition-colors"
             >
               <Image
-                src={images.linkedin}
+                src={images.linkedinb}
                 alt="LinkedIn"
                 width={16}
                 height={16}
@@ -197,10 +199,10 @@ const TeamSection = () => {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
+                className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-black-500/10 hover:bg-black-500/20 transition-colors"
               >
                 <Image
-                  src={images.linkedin}
+                  src={images.linkedinb}
                   alt="LinkedIn"
                   width={14}
                   height={14}
