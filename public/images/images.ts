@@ -15,6 +15,26 @@ import ht from './heartrate.svg';
 import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
+import missionVision from './missionVision.svg';
+
+// Core values images
+import clarity from './clarity.svg';
+import effic from './effic.svg';
+import creativity from './creativity.svg';
+import inclusive from './inclusive.svg';
+import toplift from './topleft.svg';
+import topright from './topright.svg';
+
+// Team member images
+import isaac from './isaacOjo.svg';
+import olivia from './olivia.svg';
+import abel from './Abel.svg';
+import collins from './Collins.svg';
+import jessica from './Jassica.svg';
+import emma from './Emma.svg';
+import victoria from './Victoria.svg';
+import cole from './Cole.svg';
+import favor from './Favor.svg';
 
 export const images = {
   logo,
@@ -34,6 +54,24 @@ export const images = {
   mentoring,
   os,
   wwa,
+  missionVision,
+  // Core values
+  clarity,
+  effic,
+  creativity,
+  inclusive,
+  toplift,
+  topright,
+  // Team members
+  isaac,
+  olivia,
+  abel,
+  collins,
+  jessica,
+  emma,
+  victoria,
+  cole,
+  favor,
 };
 
 export default images;
