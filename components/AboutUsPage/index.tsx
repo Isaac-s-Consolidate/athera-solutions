@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { images } from '@/public/images/images';
 import CoreValues from '../ourCoreValues';
 import ContactForm from '@/components/ContactForm';
-import Delivering from '@/components/Delivering';
+import ImpactCard from '@/components/ImpactCard';
 
 const teamMembers = [
   {
@@ -316,7 +316,7 @@ const AboutUsPage = () => {
       {/* ---------------- SECTION 3 — TEAM ---------------- */}
       <TeamSection />
       {/* CTA */}
-      <Delivering />
+      <ImpactCard />
       <ContactForm />
     </main>
   );

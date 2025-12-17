@@ -7,7 +7,7 @@ import user1 from '@/app/assets/users/user1.png';
 import user2 from '@/app/assets/users/user3.png';
 import user3 from '@/app/assets/users/user2.png';
 import user4 from '@/app/assets/users/user2.png';
-import Delivering from '@/components/Delivering';
+import ImpactCard from './ImpactCard';
 
 interface Testimonial {
   id: number;
@@ -196,7 +196,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* Testimonial text */}
-                    <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed">
+                    <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-5">
                       <p className="relative before:content-['\0022'] before:text-3xl sm:before:text-4xl before:absolute before:-left-1 sm:before:-left-2 before:-top-3 sm:before:-top-4 before:opacity-20 before:font-serif">
                         {t.message}
                       </p>
@@ -207,7 +207,9 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-        <Delivering />
+        <div className="mt-15">
+          <ImpactCard />
+        </div>
       </div>
     </div>
   );
