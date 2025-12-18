@@ -7,7 +7,7 @@ import ContactForm from '@/components/ContactForm';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import leftArrow from '@/app/assets/left.png';
 import rightArrow from '@/app/assets/right.png';
-import Delivering from '@/components/Delivering';
+import ImpactCard from '../ImpactCard';
 
 interface ServiceCardProps {
   icon: string;
@@ -72,18 +72,7 @@ const FAQItem = ({ q, a }: { q: string; a: string }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative group rounded-xl p-[2px] mb-4 border border-[#0BB453]">
-      {/* Hover animated glow */}
-      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[#0BB453]/30" />
-        <div
-          className="absolute inset-0 animate-border-flow"
-          style={{
-            background: `conic-gradient(from 210deg, #0BB453, #033020, #02281A, #0BB453)`,
-          }}
-        />
-      </div>
-
+    <div className="rounded-xl mb-4 border border-[#0BB453] transition-colors duration-300 hover:border-[#094e22]">
       {/* Inner box */}
       <div className="relative bg-inherit rounded-xl py-4 px-5">
         <button
@@ -120,104 +109,114 @@ const ServicesPage = () => {
   const cards = [
     {
       icon: images.brackets,
-      title: 'Custom Software',
-      description: 'Tailored solutions built to scale.',
+      title: 'Digital transformation',
+      description:
+        'We help modernize your operations through smart technology and seamless system integration.',
       features: [
-        'End-to-end engineering',
-        'Performance optimized',
-        'Enterprise-grade security',
-        'API-ready architectures',
+        'Tech Strategy',
+        'Code Review',
+        'Digital Transformation',
+        'Performance Audit',
       ],
     },
     {
       icon: images.cloud,
-      title: 'Cloud Systems',
-      description: 'Reliable, fault-tolerant cloud deployments.',
+      title: 'Software & app development',
+      description:
+        'We build robust software and mobile apps that scale seamlessly and deliver real business value.',
       features: [
-        'AWS / GCP / Azure',
-        'Horizontal scaling',
-        'Load-balanced systems',
-        '24/7 uptime focus',
+        'Responsive Design',
+        'SEO Optimized',
+        'React Native',
+        'Flutter',
       ],
     },
     {
       icon: images.ht,
-      title: 'UI/UX Design',
-      description: 'Human-centered interfaces that convert.',
+      title: 'Website design',
+      description:
+        'We craft stunning, high-performing websites that reflect your brand and drive engagement.',
       features: [
-        'User flows',
-        'High-fidelity mockups',
+        'User Research',
+        'Wire-framing',
+        'Prototyping',
         'Design systems',
-        'Interactive prototypes',
       ],
     },
     {
       icon: images.group,
       title: 'Product Strategy',
-      description: 'From concept to market-ready execution.',
+      description:
+        'We guide you from concept to launch with strategy that aligns vision, market and execution.',
       features: [
-        'Roadmapping',
-        'Market alignment',
-        'Go-to-market planning',
-        'Launch readiness',
+        'Market Research',
+        'Go-to- Market Strategy',
+        'Product Road-mapping',
+        'Continuous Innovation',
       ],
     },
     {
       icon: images.mentoring,
-      title: 'Automation & AI',
-      description: 'Smarter workflows, better decisions.',
+      title: 'Backend development',
+      description:
+        'We engineer reliable, secure backends that keep your products fast, stable and scalable.',
       features: [
-        'AI chatbots',
-        'Process automation',
-        'ML-powered insights',
-        'Task orchestration',
+        'System Integration',
+        'Cloud-Based solutions Creation',
+        'Performance Optimization',
+        'API & database Architecture',
       ],
     },
   ];
 
   const faqs = [
     {
-      q: 'How long does a typical project take?',
-      a: 'Most products take 4–12 weeks depending on complexity.',
+      q: 'What kind of businesses do you work with?',
+      a: 'We collaborate with startups, small businesses, and established enterprises - helping them turn ideas into scalable digital solutions.',
     },
     {
-      q: 'Do you work with startups?',
-      a: 'Yes, we help early-stage teams move fast.',
+      q: 'What services does Athera Solutions provide?',
+      a: 'We offer end-to-end technology services including UI/UX design, software and web development, consulting and digital transformation.',
     },
     {
-      q: 'Can you maintain my existing system?',
-      a: 'We handle refactors, upgrades, and ongoing support.',
+      q: 'How long does it take to complete a project?',
+      a: 'Timelines depend on the project complexity, but our agile approach ensures consistent progress and on-time delivery.',
     },
     {
-      q: 'What tech stacks do you use?',
-      a: 'React, Next.js, Node, Go, Docker, AWS, microservices.',
+      q: 'Do you provide post-launch support?',
+      a: 'Absolutely. We offer continuous product monitoring, updates and performance optimization to keep your systems running smoothly.',
     },
     {
-      q: 'Do you offer design-only projects?',
-      a: 'Yes, you can hire us for UI/UX alone.',
+      q: 'How do i get started?',
+      a: 'Simply reach out through our contact form or click on the Book a Consultation. We will discuss your goals and tailor a plan for your project.',
     },
     {
-      q: 'Do you provide support after launch?',
-      a: 'We offer long-term maintenance plans.',
+      q: 'Do you offer remote or global services?',
+      a: 'Yes, we collaborate with clients around the world using digital tools for seamless communication and project delivery.',
     },
     {
-      q: 'What makes Athera different?',
-      a: 'Scalability, precision, and human-centered product thinking.',
+      q: 'Can you help improve an existing website?',
+      a: 'Yes! We specialize in auditing, redesigning and optimizing products to enhance user experience and performance.',
     },
   ];
 
   return (
-    <div className="w-full bg-[#010A04] text-white py-20 px-6 flex flex-col items-center gap-14">
+    <div className="w-full bg-[#010A04] text-white py-16 px-4 sm:px-6 flex flex-col gap-14">
       {/* HEADER */}
-      <div className="mt-10 mb-6 px-6 py-3 border border-[#E6E7E8]/40 rounded-2xl bg-[#010A04]/40 backdrop-blur-md shadow-lg">
-        <h1 className="text-3xl font-semibold text-[#E6E7E8]">Our Services</h1>
+      <div className="flex justify-center mt-30 mb-6">
+        <div className="inline-block border border-gray-600 rounded-full px-5 py-2 bg-[#010A04]/30 hover:bg-green-500 backdrop-blur-sm shadow-sm">
+          <h1 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-semibold  text-white tracking-tight">
+            Our Services
+          </h1>
+        </div>
       </div>
 
-      <div className="max-w-[900px] text-center flex flex-col gap-4">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-white">
+      {/* INTRO TEXT */}
+      <div className="w-full max-w-3xl mx-auto text-center px-4 sm:px-6 flex flex-col gap-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white leading-snug">
           Scalable & Human Centered & Bridging Ideas
         </h2>
-        <p className="text-lg text-[#E6E7E8] leading-relaxed mt-9">
+        <p className="text-sm sm:text-base md:text-lg text-[#E6E7E8] leading-relaxed mt-4 sm:mt-6">
           At Athera, we design and build digital solutions that work beautifully
           and perform flawlessly. Whether you are a startup or a large business,
           we turn vision into tangible results.
@@ -225,14 +224,14 @@ const ServicesPage = () => {
       </div>
 
       {/* SERVICE CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1200px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-none sm:max-w-[1200px] mx-auto cursor-pointer">
         {cards.map((c, i) => (
           <ServiceCard key={i} {...c} />
         ))}
       </div>
 
       {/* FAQ SECTION */}
-      <div className="max-w-[800px] w-full mt-10 mx-auto text-center">
+      <div className="w-full max-w-none sm:max-w-[800px] mx-auto mt-10">
         <div className="text-center mb-10 sm:mb-16">
           <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
             <Image
@@ -265,14 +264,16 @@ const ServicesPage = () => {
       </div>
 
       {/* CTA */}
-      <p className="max-w-[700px] text-center text-sm text-[#E6E7E8] mt-10">
-        Ready to turn your idea into a powerful digital product?
-      </p>
+      <div className="w-full flex flex-col items-center gap-4 mt-10 px-4 sm:px-6">
+        <p className="text-center text-sm sm:text-base md:text-lg text-[#E6E7E8] max-w-xl">
+          Ready to turn your idea into a powerful digital product?
+        </p>
 
-      <button className="px-8 py-3 bg-transparent text-white rounded-full border border-gray-400 hover:bg-green-800 transition cursor-pointer">
-        Start Your Project Today
-      </button>
-      <Delivering />
+        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-white rounded-full border border-gray-600 hover:bg-green-400 cursor-pointer transition-colors duration-300 text-sm sm:text-base md:text-lg">
+          Start Your Project Today
+        </button>
+      </div>
+      <ImpactCard />
       <ContactForm />
     </div>
   );
