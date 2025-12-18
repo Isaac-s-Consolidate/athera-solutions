@@ -4,7 +4,13 @@ import { useState } from 'react';
 import Image from 'next/image';
 import images from '@/public/images/images';
 
-export default function ContactSection() {
+interface ContactFormProps {
+  showTopBorder?: boolean;
+}
+
+export default function ContactSection({
+  showTopBorder = true,
+}: ContactFormProps) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -29,13 +35,15 @@ export default function ContactSection() {
 
   return (
     <div className="relative py-25 px-4">
-      <div
-        className="absolute top-0 left-0 right-0 h-[1px]"
-        style={{
-          background:
-            'linear-gradient(90deg, #010A04 1.84%, #518369 51.52%, #010A04 100%)',
-        }}
-      ></div>
+      {showTopBorder && (
+        <div
+          className="absolute top-0 left-0 right-0 h-[1px]"
+          style={{
+            background:
+              'linear-gradient(90deg, #010A04 1.84%, #518369 51.52%, #010A04 100%)',
+          }}
+        ></div>
+      )}
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -51,7 +59,7 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Column */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-3xl font-bold mb-6 text-white">
               Let&apos;s start a conversation
             </h2>
             <p className="text-gray-300 mb-12">
