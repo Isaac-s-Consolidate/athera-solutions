@@ -7,7 +7,7 @@ import user1 from '@/app/assets/users/user1.png';
 import user2 from '@/app/assets/users/user3.png';
 import user3 from '@/app/assets/users/user2.png';
 import user4 from '@/app/assets/users/user2.png';
-import Delivering from '@/components/Delivering';
+import ImpactCard from './ImpactCard';
 
 interface Testimonial {
   id: number;
@@ -100,114 +100,63 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="relative group w-full transition-all duration-500"
+              className="border-gradient w-full h-full rounded-2xl"
               style={{ maxWidth: '100%' }}
             >
-              <div className="rounded-2xl p-[6px] h-full">
-                {/* Animated gradient border container */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
-                  {/* Base layers - stacked backgrounds */}
-                  <div className="absolute inset-0 bg-[#E6E7E8]" />
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        'radial-gradient(96% 96% at 50% 7.5%, rgba(0, 80, 0, 0.15) 0%, rgba(0, 80, 0, 0) 100%)',
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-[#0BB453]" />
-
-                  {/* Rotating conic gradient - creates the traveling border effect */}
-                  <div
-                    className="absolute inset-0 animate-border-flow"
-                    style={{
-                      background: `conic-gradient(from 225deg at 50% 50%, 
-                    #0BB453 0deg,
-                    #0BB453 45deg,
-                    #0BB453 45deg,
-                    #0BB453 90deg,
-                    #0BA44D 90deg,
-                    #0A9347 95deg,
-                    #098241 95deg,
-                    #08713B 100deg,
-                    #076035 105deg,
-                    #06502F 110deg,
-                    #054029 120deg,
-                    #043A24 135deg,
-                    #033020 150deg,
-                    #02281A 180deg,
-                    #02281A 180deg,
-                    #022018 270deg,
-                    #022018 360deg
-                  )`,
-                    }}
-                  />
-                </div>
-
-                {/* Inner content container */}
-                <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full cursor-pointer">
-                  {/* Linear gradient overlay on content */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                    style={{
-                      background:
-                        'linear-gradient(282.33deg, rgba(255, 255, 255, 0) 4.18%, rgba(255, 255, 255, 0.04) 95.82%)',
-                    }}
-                  />
-
-                  <div className="relative z-10 p-4 sm:p-5 md:p-6">
-                    {/* Avatar and user info */}
-                    <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                      <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-green-500 shrink-0">
-                        <Image
-                          src={t.avatar}
-                          alt={t.name}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 639px) 48px, (max-width: 767px) 56px, 64px"
-                          quality={85}
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-white font-medium text-base sm:text-lg truncate">
-                          {t.name}
-                        </h3>
-                        <p className="text-gray-400 text-xs sm:text-sm truncate">
-                          {t.role} • {t.country}
-                        </p>
-                        <div className="flex mt-1">
-                          {[...Array(5)].map((_, i) => (
-                            <svg
-                              key={i}
-                              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${
-                                i < t.stars
-                                  ? 'text-yellow-400'
-                                  : 'text-gray-600'
-                              }`}
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden="true"
-                            >
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
+              {/* Inner content container */}
+              <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full p-6 sm:p-8">
+                <div className="relative z-10 p-4 sm:p-5 md:p-6">
+                  {/* Avatar and user info */}
+                  <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-green-500 shrink-0">
+                      <Image
+                        src={t.avatar}
+                        alt={t.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 639px) 48px, (max-width: 767px) 56px, 64px"
+                        quality={85}
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-white font-medium text-base sm:text-lg truncate">
+                        {t.name}
+                      </h3>
+                      <p className="text-gray-400 text-xs sm:text-sm truncate">
+                        {t.role} • {t.country}
+                      </p>
+                      <div className="flex mt-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${
+                              i < t.stars ? 'text-yellow-400' : 'text-gray-600'
+                            }`}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            aria-hidden="true"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-
-                    {/* Testimonial text */}
-                    <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed">
-                      <p className="relative before:content-['\0022'] before:text-3xl sm:before:text-4xl before:absolute before:-left-1 sm:before:-left-2 before:-top-3 sm:before:-top-4 before:opacity-20 before:font-serif">
-                        {t.message}
-                      </p>
-                    </blockquote>
                   </div>
+
+                  {/* Testimonial text */}
+                  <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-5">
+                    <p className="relative before:content-['\0022'] before:text-3xl sm:before:text-4xl before:absolute before:-left-1 sm:before:-left-2 before:-top-3 sm:before:-top-4 before:opacity-20 before:font-serif">
+                      {t.message}
+                    </p>
+                  </blockquote>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <Delivering />
+        <div className="mt-15">
+          <ImpactCard />
+        </div>
       </div>
     </div>
   );

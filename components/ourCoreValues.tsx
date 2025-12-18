@@ -38,8 +38,6 @@ export default function CoreValues() {
 
   return (
     <section className="w-full py-20 bg-black text-white relative overflow-visible">
-      {/* Decorative mid-left icon (efficiency) kept absolute; top decorations will sit inline with the heading */}
-
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Title with inline decorative images */}
         <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
@@ -48,8 +46,8 @@ export default function CoreValues() {
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
           <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
             Our Core Values
@@ -59,8 +57,8 @@ export default function CoreValues() {
             alt=""
             aria-hidden="true"
             className="w-10 h-10 opacity-80"
-            width={24}
-            height={24}
+            width={40}
+            height={40}
           />
         </h2>
 
