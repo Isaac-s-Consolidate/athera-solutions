@@ -11,7 +11,7 @@ const topright = '/images/topright.svg';
 const ContactUsPage = () => {
   return (
     <div className="text-white pt-24">
-      <ContactForm />
+      <ContactForm showTopBorder={false} />
       {/* Need Immediate Help Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
