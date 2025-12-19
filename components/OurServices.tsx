@@ -1,5 +1,7 @@
 import images from '@/public/images/images';
 import Image from 'next/image';
+import SectionHeader from './SectionHeader';
+import CardSection from './CardSection';
 
 interface ServiceCardProps {
   icon: string;
@@ -73,36 +75,13 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="w-full flex items-center justify-center py-12 md:py-20 px-4 sm:px-6">
-      <div className="flex max-w-[1200px] flex-col items-center gap-6 w-full">
-        <div className="w-full max-w-[337px] px-4 sm:px-0">
-          <Image
-            src={images.os}
-            alt="Our Services"
-            width={337}
-            height={60}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
-
-        <p className="text-center max-w-4xl font-poppins w-full px-4 sm:px-0 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-normal text-[#E6E7E8]">
-          We deliver end-to-end digital services designed to help businesses
-          innovate, optimize and scale with confidence.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full mt-2">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <CardSection
+        header="Our Services"
+        description="We deliver end-to-end digital services designed to help businesses innovate, optimize and scale with confidence."
+        cards={services}
+      />
+    </>
   );
 };
 

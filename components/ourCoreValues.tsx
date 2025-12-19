@@ -1,6 +1,7 @@
 // app/components/CoreValues.tsx
 
 import Image from 'next/image';
+import SectionHeader from './SectionHeader';
 
 // Type for the value items
 interface CoreValueItem {
@@ -39,31 +40,10 @@ export default function CoreValues() {
   return (
     <section className="w-full py-20 bg-black text-white relative overflow-visible">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Title with inline decorative images */}
-        <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-          <Image
-            src="/images/topleft.svg"
-            alt=""
-            aria-hidden="true"
-            className="w-10 h-10 opacity-80"
-            width={40}
-            height={40}
-          />
-          <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
-            Our Core Values
-          </span>
-          <Image
-            src="/images/topright.svg"
-            alt=""
-            aria-hidden="true"
-            className="w-10 h-10 opacity-80"
-            width={40}
-            height={40}
-          />
-        </h2>
+        <SectionHeader header="Our Core Values" />
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           {values.map((item) => (
             <div
               key={item.title}

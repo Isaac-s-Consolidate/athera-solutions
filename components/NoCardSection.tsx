@@ -11,7 +11,7 @@ const NoCardSection = ({ header, description }: NoCardSectionProps) => {
       <SectionHeader header={header} />
       <div className="flex flex-col gap-8">
         <hr className="h-0.5  border-0 bg-linear-to-r from-[rgba(1,10,4,0.3)] via-[rgba(160,251,205,0.3)] to-[rgba(1,10,4,0.3)]" />
-        <div className="text-[16px] tracking-[-0.8px] leading-[160%] text-center">
+        <div className="text-[16px] tracking-[-0.8px] leading-[160%] text-center font-light">
           {description}
         </div>
         <hr className="h-0.5 border-0 bg-linear-to-r from-[rgba(1,10,4,0.3)] via-[rgba(160,251,205,0.3)] to-[rgba(1,10,4,0.3)]" />

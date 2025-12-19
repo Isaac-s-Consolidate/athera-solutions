@@ -4,14 +4,22 @@ import CardSection, { Card } from '../CardSection';
 import ContactForm from '../ContactForm';
 import ImpactCard from '../ImpactCard';
 import NoCardSection from '../NoCardSection';
+import Image from 'next/image';
 
 // HERO SECTION
 const CareersHero = () => {
   return (
     // Hero section
     <section className="flex items-center justify-center w-full min-h-[650px] relative">
+      <Image
+        src={images.chero}
+        alt="Careers Hero"
+        fill
+        // added top border for design accuracy
+        className="object-cover opacity-40 md:border-t-80 border-t-60 border-black-700"
+      />
       <div className="absolute flex flex-col items-center text-[#E6E7E8] gap-7">
-        <button className="w-[178px] max-h-[53px] flex items-center justify-center p-4 font-bold text-[22px] border text-[#E6E7E8] border-[#E6E7E8] rounded-[50px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
+        <button className="w-[178px] max-h-[60px] flex items-center justify-center p-4 font-bold text-[22px] border text-[#E6E7E8] border-[#E6E7E8] rounded-[50px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
           Careers
         </button>
 
@@ -74,7 +82,7 @@ const HowToApply = () => {
     <>
       <NoCardSection
         header="How to Apply"
-        description="Send your CV to careers@atherasolutions.com"
+        description="Send your CV and portfolio to careers@atherasolutions.com"
       />
     </>
   );
@@ -84,23 +92,23 @@ const HowToApply = () => {
 const GrowthAndPerks = () => {
   const cardsData: Card[] = [
     {
-      icon: images.brackets, // Using brackets.svg as a replacement
+      icon: images.rbrackets,
       title: 'Remote-friendly work options',
     },
     {
-      icon: images.cloud, // Using cloud.svg as a replacement
-      title: 'Learning and mentorship programs',
+      icon: images.globe,
+      title: 'Learning & mentorship programs',
     },
     {
-      icon: images.send, // Using send.svg as a replacement
+      icon: images.check,
       title: 'Flexible shcedules',
     },
     {
-      icon: images.ht, // Using heartrate.svg as a replacement
+      icon: images.cash,
       title: 'Project bonuses',
     },
     {
-      icon: images.group, // Using group.svg as a replacement
+      icon: images.graph,
       title: 'Career advancement opportunities',
     },
   ];

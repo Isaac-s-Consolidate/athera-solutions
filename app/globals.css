@@ -6,7 +6,7 @@
   --foreground: #171717;
   --radial-green: radial-gradient(
     96% 96% at 50% 7.5%,
-    rgba(0, 80, 0, 0.15) 0%,
+    rgba(0, 80, 0, 0.3) 0%,
     rgba(0, 80, 0, 0) 100%
   );
   --gradient-border: linear-gradient(

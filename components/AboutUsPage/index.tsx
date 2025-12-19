@@ -1,20 +1,19 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { images } from '@/public/images/images';
-import CoreValues from '../ourCoreValues';
 import ContactForm from '@/components/ContactForm';
-import ImpactCard from '@/components/ImpactCard';
+import { images } from '@/public/images/images';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import ImpactCard from '../ImpactCard';
+import CoreValues from '../ourCoreValues';
+import SectionHeader from '../SectionHeader';
 
 const teamMembers = [
   {
     name: 'Mr. Isaac Ojo',
     title: 'CEO',
     image: images.isaac,
-    linkedin:
-      'https://www.linkedin.com/in/isaac-faith-ojo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    linkedin: '#',
   },
   {
     name: 'Ms. Olivia',
@@ -56,8 +55,7 @@ const teamMembers = [
     name: 'Ms. Victoria',
     title: 'Virtual Assistant',
     image: images.victoria,
-    linkedin:
-      'https://www.linkedin.com/in/victoria-okoro-31a73a321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    linkedin: '#',
   },
   {
     name: 'Mr. Cole',
@@ -66,6 +64,30 @@ const teamMembers = [
     linkedin: '#',
   },
 ];
+
+interface mvpCardProps {
+  title: string;
+  description: string;
+  position?: 'left' | 'right';
+}
+
+const MVPCards = ({ title, description, position }: mvpCardProps) => {
+  return (
+    <div
+      className={`relative group border-gradient  w-full md:max-w-3xl ${position === 'right' && 'md:ml-auto'}`}
+    >
+      {/* Real card content */}
+      <div className="relative text-[#E6E7E8] rounded-xl min-h-[228px] bg-radial-green border border-[#0F2E1F]/50 p-8 md:p-12">
+        <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
+          {title}
+        </h3>
+        <p className="text-[22px] md:text-lg leading-relaxed text-left">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 // Separate Team Component
 const TeamSection = () => {
@@ -140,10 +162,10 @@ const TeamSection = () => {
               href={teamMembers[0].linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black-500/10 hover:bg-black-500/20 transition-colors"
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
             >
               <Image
-                src={images.linkedinb}
+                src={images.linkedin}
                 alt="LinkedIn"
                 width={16}
                 height={16}
@@ -199,10 +221,10 @@ const TeamSection = () => {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-black-500/10 hover:bg-black-500/20 transition-colors"
+                className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-colors"
               >
                 <Image
-                  src={images.linkedinb}
+                  src={images.linkedin}
                   alt="LinkedIn"
                   width={14}
                   height={14}
@@ -218,98 +240,61 @@ const TeamSection = () => {
 };
 
 const AboutUsPage = () => {
+  const mvpData: mvpCardProps[] = [
+    {
+      title: 'Our Vision',
+      description:
+        'To be a trusted leader in digital transformation – helping businesses harness the power of technology to achieve lasting success.',
+      position: 'left',
+    },
+    {
+      title: 'Our Mission',
+      description:
+        ' To make digital transformation accessible, efficient, and sustainable for individuals and organizations across Africa and beyond — empowering them to build, launch, and scale with confidence.',
+      position: 'right',
+    },
+    {
+      title: 'Our Promise',
+      description:
+        "At Athera Solutions, we don't just write code — we engineer possibilities.",
+      position: 'left',
+    },
+  ];
+
   return (
-    <main className="w-full min-h-screen bg-[#010A04] text-white pt-28">
+    <main className="w-full min-h-screen bg-[#010A04] text-white pt-50">
       {/* ---------------- SECTION 1 — OUR STORY ---------------- */}
-      <section className="w-full px-6 md:px-12 lg:px-20 text-center mb-24">
-        <button className="border border-[#e2e7ec] text-white px-6 py-2 rounded-full text-sm hover:bg-[#0BB453] transition-all backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+      <section className="flex flex-col items-center text-[#E6E7E8] gap-7 mb-20">
+        <button className="w-[178px] max-h-[60px] flex items-center justify-center p-4 font-bold text-[22px] border text-[#E6E7E8] border-[#E6E7E8] rounded-[50px] hover:bg-[#0BB453] hover:border-[#0BB453] transition duration-300">
           Our Story
         </button>
 
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold mt-6">
+        <div className="flex font-semibold text-4xl md:text-[40px] text-center">
           Transforming Ideas Into Impactful Digital Solutions.
-        </h1>
+        </div>
 
-        <p className="max-w-2xl mx-auto mt-6 text-sm md:text-base text-gray-300 leading-relaxed">
-          Athera Solutions was born from a simple belief – that technology
+        <div className="text-xl max-w-[978px] text-center md:text-[22px] px-5 py-10">
+          Athera Solutions was born from a simple belief - that technology
           should make life and work easier, not harder. We started as a small
           team with a big dream: to create solutions that empower people,
-          connect businesses, and inspire change.
-        </p>
+          connect businesses and inspire change.
+        </div>
       </section>
 
       {/* ---------------- SECTION 2 — OUR MISSION & VISION ---------------- */}
       <section className="w-full px-6 md:px-12 lg:px-20 mb-24">
         {/* Header */}
-        <div className="w-full max-w-4xl mx-auto mb-16">
-          <h2 className="flex items-center justify-center text-4xl font-semibold mb-14 gap-6">
-            <Image
-              src={images.toplift}
-              alt=""
-              aria-hidden="true"
-              className="w-8 h-8 object-contain"
-              width={32}
-              height={32}
+        <SectionHeader header="Our Mission & Vision" />
+
+        <div className="max-w-7xl mx-auto space-y-8 my-20">
+          {mvpData.map((item, index) => (
+            <MVPCards
+              key={index}
+              title={item.title}
+              description={item.description}
+              position={item.position}
             />
-            <span className="bg-gradient-to-r from-[#0BB453] to-[#242243] bg-clip-text text-transparent">
-              Our Mission &amp; Vision
-            </span>
-            <Image
-              src={images.topright}
-              alt=""
-              aria-hidden="true"
-              className="w-8 h-8 object-contain"
-              width={32}
-              height={32}
-            />
-          </h2>
-        </div>
-
-        <div className="max-w-7xl mx-auto space-y-8">
-          {/* Vision Card - LEFT SIDE */}
-          <div className="relative group border-gradient w-full md:max-w-3xl">
-            {/* Real card content */}
-            <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
-                Our Vision
-              </h3>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                To be a trusted leader in digital transformation – helping
-                businesses harness the power of technology to achieve lasting
-                success.
-              </p>
-            </div>
-          </div>
-
-          {/* Mission Card - RIGHT SIDE */}
-          <div className="relative group border-gradient w-full md:max-w-3xl md:ml-auto">
-            <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
-                Our Mission
-              </h3>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                To make digital transformation accessible, efficient, and
-                sustainable for individuals and organizations across Africa and
-                beyond — empowering them to build, launch, and scale with
-                confidence.
-              </p>
-            </div>
-          </div>
-
-          {/* Promise Card - LEFT SIDE WITH GREEN CORNER */}
-          <div className="relative group border-gradient w-full md:max-w-3xl">
-            <div className="relative rounded-xl bg-[#0A1A12] border border-[#0F2E1F]/50 p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-left">
-                Our Promise
-              </h3>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed text-left">
-                At Athera Solutions, we don&apos;t just write code — we engineer
-                possibilities.
-              </p>
-
-              {/* Green Corner Accent - Bottom Right */}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
