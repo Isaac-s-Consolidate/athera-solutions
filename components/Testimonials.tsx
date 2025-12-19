@@ -1,15 +1,14 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
-import leftArrow from '@/app/assets/left.png';
-import rightArrow from '@/app/assets/right.png';
 import user1 from '@/app/assets/users/user1.png';
+import {
+  default as user3,
+  default as user4,
+} from '@/app/assets/users/user2.png';
 import user2 from '@/app/assets/users/user3.png';
-import user3 from '@/app/assets/users/user2.png';
-import user4 from '@/app/assets/users/user2.png';
-import Delivering from '@/components/Delivering';
-import SectionHeader from './SectionHeader';
+import Image, { StaticImageData } from 'next/image';
 import ImpactCard from './ImpactCard';
+import SectionHeader from './SectionHeader';
 
 interface Testimonial {
   id: number;

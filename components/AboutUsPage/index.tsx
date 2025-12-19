@@ -1,15 +1,12 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { images } from '@/public/images/images';
-import CoreValues from '../ourCoreValues';
 import ContactForm from '@/components/ContactForm';
-import Delivering from '@/components/Delivering';
-import SectionHeader from '../SectionHeader';
-import { header } from 'framer-motion/client';
+import { images } from '@/public/images/images';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import ImpactCard from '../ImpactCard';
+import CoreValues from '../ourCoreValues';
+import SectionHeader from '../SectionHeader';
 
 const teamMembers = [
   {
