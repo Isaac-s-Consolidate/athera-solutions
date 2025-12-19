@@ -114,8 +114,8 @@ export default function Hero() {
         {/* BUTTON */}
         <div className="flex justify-center mt-6 sm:mt-5 md:mt-4">
           <button
-            className="w-[90%] max-w-[461px] h-[60px] rounded-full border border-white/40 text-white font-semibold 
-            hover:bg-[#0BB453] transition-all backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+            className="w-[90%] max-w-[461px] min-h-[60px] rounded-full border border-white/40 text-white font-bold text-[22px] 
+            hover:bg-[#0BB453] hover:border-[#0BB453] transition-all duration-300 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.15)]"
           >
             Get Started
           </button>

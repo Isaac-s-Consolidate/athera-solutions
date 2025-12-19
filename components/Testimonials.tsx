@@ -1,13 +1,14 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
-import leftArrow from '@/app/assets/left.png';
-import rightArrow from '@/app/assets/right.png';
 import user1 from '@/app/assets/users/user1.png';
+import {
+  default as user3,
+  default as user4,
+} from '@/app/assets/users/user2.png';
 import user2 from '@/app/assets/users/user3.png';
-import user3 from '@/app/assets/users/user2.png';
-import user4 from '@/app/assets/users/user2.png';
+import Image, { StaticImageData } from 'next/image';
 import ImpactCard from './ImpactCard';
+import SectionHeader from './SectionHeader';
 
 interface Testimonial {
   id: number;
@@ -68,27 +69,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-16">
-          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
-            <Image
-              src={leftArrow}
-              alt=""
-              width={24}
-              height={24}
-              className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
-              aria-hidden="true"
-            />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0BB453] to-[#041f12]">
-              Testimonials
-            </h2>
-            <Image
-              src={rightArrow}
-              alt=""
-              width={24}
-              height={24}
-              className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
-              aria-hidden="true"
-            />
-          </div>
+          <SectionHeader header="Testimonials" />
           <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-4">
             Here&apos;s what some of our clients have to say about working with
             Athera Solutions.
@@ -96,15 +77,23 @@ export default function Testimonials() {
         </div>
 
         {/* Cards container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mb-40">
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="border-gradient w-full h-full rounded-2xl"
-              style={{ maxWidth: '100%' }}
+              className="border-gradient w-full transition-all duration-500"
             >
               {/* Inner content container */}
-              <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full p-6 sm:p-8">
+              <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full cursor-pointer">
+                {/* Linear gradient overlay on content */}
+                <div
+                  className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-700"
+                  style={{
+                    background:
+                      'linear-gradient(282.33deg, rgba(255, 255, 255, 0) 4.18%, rgba(255, 255, 255, 0.04) 95.82%)',
+                  }}
+                />
+
                 <div className="relative z-10 p-4 sm:p-5 md:p-6">
                   {/* Avatar and user info */}
                   <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
@@ -144,7 +133,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Testimonial text */}
-                  <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-5">
+                  <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed">
                     <p className="relative before:content-['\0022'] before:text-3xl sm:before:text-4xl before:absolute before:-left-1 sm:before:-left-2 before:-top-3 sm:before:-top-4 before:opacity-20 before:font-serif">
                       {t.message}
                     </p>
@@ -154,9 +143,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-        <div className="mt-15">
-          <ImpactCard />
-        </div>
+        <ImpactCard />
       </div>
     </div>
   );

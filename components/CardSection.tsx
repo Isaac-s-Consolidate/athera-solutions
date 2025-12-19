@@ -9,14 +9,21 @@ export interface Card {
 
 interface CardSectionProps {
   header: string;
+  description?: string;
   cards: Card[];
 }
 
-const CardSection = ({ header, cards }: CardSectionProps) => {
+const CardSection = ({ header, cards, description }: CardSectionProps) => {
   return (
     <section className="mt-20 mb-20 w-full flex flex-col items-center justify-center gap-10">
       {/* Header Image */}
       <SectionHeader header={header} />
+
+      {description && (
+        <p className="text-center max-w-6xl font-poppins w-full px-4 sm:px-0 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-normal text-[#E6E7E8]">
+          {description}
+        </p>
+      )}
 
       {/* Cards Grid */}
       <div
@@ -32,11 +39,11 @@ const CardSection = ({ header, cards }: CardSectionProps) => {
               {/* Card icon  */}
               {card.icon && (
                 <div className="self-start">
-                  <Image src={card.icon} alt={card.title} width={29} />
+                  <Image src={card.icon} alt={card.title} width={35} />
                 </div>
               )}
               {/* Card title */}
-              <div className="text-[18px] leading-[150%] font-bold self-start">
+              <div className="text-[18px] leading-[150%] font-semibold self-start">
                 {card.title}
               </div>
 

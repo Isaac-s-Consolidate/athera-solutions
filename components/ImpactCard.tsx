@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ASButton from './ASButton';
 
 const ImpactCard = () => {
@@ -12,7 +13,9 @@ const ImpactCard = () => {
           end-to-end digital transformation with technical precision
         </div>
 
-        <ASButton text="Start Your Project Today" />
+        <Link href="/contact">
+          <ASButton text="Start Your Project Today" />
+        </Link>
       </div>
     </div>
   );

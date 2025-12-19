@@ -17,6 +17,12 @@ import mentoring from './mentoring.svg';
 import os from './ourservices.svg';
 import wwa from './whoweare.svg';
 import missionVision from './missionVision.svg';
+import chero from './chero-bg.png';
+import check from './check.svg';
+import rbrackets from './revbrackets.svg';
+import graph from './graph.svg';
+import globe from './globe.svg';
+import cash from './cash.svg';
 
 // Core values images
 import clarity from './clarity.svg';
@@ -57,6 +63,12 @@ export const images = {
   os,
   wwa,
   missionVision,
+  chero,
+  check,
+  graph,
+  rbrackets,
+  globe,
+  cash,
   // Core values
   clarity,
   effic,
