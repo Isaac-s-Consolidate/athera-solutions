@@ -7,8 +7,6 @@ import user1 from '@/app/assets/users/user1.png';
 import user2 from '@/app/assets/users/user3.png';
 import user3 from '@/app/assets/users/user2.png';
 import user4 from '@/app/assets/users/user2.png';
-import Delivering from '@/components/Delivering';
-import SectionHeader from './SectionHeader';
 import ImpactCard from './ImpactCard';
 
 interface Testimonial {
@@ -82,19 +80,11 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="border-gradient w-full transition-all duration-500"
+              className="border-gradient w-full h-full rounded-2xl"
+              style={{ maxWidth: '100%' }}
             >
               {/* Inner content container */}
-              <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full cursor-pointer">
-                {/* Linear gradient overlay on content */}
-                <div
-                  className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-700"
-                  style={{
-                    background:
-                      'linear-gradient(282.33deg, rgba(255, 255, 255, 0) 4.18%, rgba(255, 255, 255, 0.04) 95.82%)',
-                  }}
-                />
-
+              <div className="relative rounded-[14px] overflow-hidden bg-[#0A0A0A] h-full p-6 sm:p-8">
                 <div className="relative z-10 p-4 sm:p-5 md:p-6">
                   {/* Avatar and user info */}
                   <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
@@ -134,7 +124,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Testimonial text */}
-                  <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed">
+                  <blockquote className="text-gray-300 text-sm sm:text-[15px] leading-relaxed mb-5">
                     <p className="relative before:content-['\0022'] before:text-3xl sm:before:text-4xl before:absolute before:-left-1 sm:before:-left-2 before:-top-3 sm:before:-top-4 before:opacity-20 before:font-serif">
                       {t.message}
                     </p>
@@ -144,7 +134,9 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-        <ImpactCard />
+        <div className="mt-15">
+          <ImpactCard />
+        </div>
       </div>
     </div>
   );
