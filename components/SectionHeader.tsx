@@ -3,7 +3,7 @@ import leftArrow from '@/app/assets/left.png';
 import rightArrow from '@/app/assets/right.png';
 
 const SectionHeader = ({ header }: { header: string }) => (
-  <div className="mb-10 flex items-center justify-center">
+  <div className="mb-2 flex items-center justify-center">
     <Image
       src={leftArrow}
       width={42}

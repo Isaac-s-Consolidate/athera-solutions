@@ -24,8 +24,8 @@ export default function Navbar(): React.ReactElement {
   const getActiveClass = (href: string) => {
     const isActive = pathname === href || (pathname === '/' && href === '/');
     return isActive
-      ? 'text-transparent bg-clip-text bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] font-semibold'
-      : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] transition-all duration-300';
+      ? 'text-transparent bg-clip-text bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] font-semibold underline decoration-[#242243] decoration-[0%] underline-offset-2'
+      : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-[linear-gradient(180deg,#0CAB52_0%,#242243_100%)] transition-all duration-300t';
   };
 
   const navbarStyle = {
@@ -92,22 +92,23 @@ export default function Navbar(): React.ReactElement {
               <Image
                 src={images.logo}
                 alt="Athera logo"
-                width={140}
-                height={40}
+                width={192}
+                height={65}
                 priority={false}
-                className="block object-contain"
+                sizes="(max-width: 640px) 100px, (max-width: 768px) 140px, 192px"
+                className="block object-contain w-[150px]  lg:w-48"
               />
             </Link>
           </div>
 
           {/* MIDDLE: Desktop nav links */}
           <div className="hidden md:flex md:gap-8">
-            <ul className="flex items-center gap-10 text-sm font-medium">
+            <ul className="flex items-center lg:gap-10 gap-5 text-sm font-medium">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`hover:opacity-80 transition-all font-medium ${getActiveClass(link.href)}`}
+                    className={`hover:opacity-80 transition-all lg:text-[20px] text-[15px] font-light ${getActiveClass(link.href)}`}
                   >
                     {link.label}
                   </Link>
@@ -120,8 +121,9 @@ export default function Navbar(): React.ReactElement {
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
               <Link
-                href="/get-started"
-                className="inline-flex items-center px-4 py-2 rounded-md border border-[#E6E7E8] text-[#E6E7E8] text-sm font-semibold hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors"
+                href="/contact"
+                className="px-4 py-2 rounded-full border border-[#E6E7E8] text-[#E6E7E8] font-bold lg:text-[22px] text-[18px]
+            hover:bg-[#0BB453] hover:border-[#0BB453] transition-all duration-300 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.15)]"
               >
                 Get Started
               </Link>
