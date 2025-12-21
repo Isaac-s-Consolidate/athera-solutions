@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import images from '@/public/images/images';
 import SectionHeader from './SectionHeader';
 
 const WhoWeAre = () => {
